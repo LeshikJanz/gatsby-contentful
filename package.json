@@ -9,6 +9,7 @@
     "gatsby-link": "latest",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-offline": "latest",
+    "gatsby-plugin-sass": "^1.0.1",
     "gatsby-source-contentful": "latest",
     "gatsby-transformer-remark": "latest",
     "lodash": "^4.16.4",
@@ -17,7 +18,9 @@
     "typography": "^0.15.8",
     "typography-breakpoint-constants": "^0.14.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {

@@ -1,0 +1,36 @@
+.mainContainer {
+  margin: 50px 80px;
+
+  .header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    > .navTab {
+      float: right;
+      margin: 20px;
+    }
+  }
+
+  .welcome {
+    width: 50%;
+
+    .mainTitle {
+      margin-top: 5%;
+      font-family: WorkSans;
+      color: blue;
+      font-size: 48px;
+      line-height: 1.3;
+    }
+  }
+
+
+}
+
