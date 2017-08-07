@@ -84,19 +84,35 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query PageQuery {
-    us: allContentfulProduct(limit: 1000) {
+    main: allContentfulMain(limit: 1000) {
       edges {
         node {
           id
+          mainNavigation {
+            link
+            label
+          }
+          mainTitle
+          mainButtons {
+            title
+            callback
+          }
+          mainWinnersLabel
+          mainWinnerBlock {
+            logo
+            label
+            companyName
+            companyDescription
+          }
+          mainWinnersButtons {
+            label
+            callback
+          }
+          mainDescription {
+            id
+          }
         }
       }
     }
-    german: allContentfulProduct(limit: 1000) {
-      edges {
-        node {
-          id
-        }
-      }
-    }
-  }
+}
 `
