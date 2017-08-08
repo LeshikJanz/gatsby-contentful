@@ -1,9 +1,8 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { rhythm } from "../utils/typography"
-import { TopWinners } from "./Homepage/TopWinners";
+import { TopWinners } from "./homepage/TopWinners";
 
-import styles from './Homepage/styles/main.module.scss';
+import styles from './homepage/styles/main.module.scss';
 
 const propTypes = {
   data: PropTypes.object.isRequired,

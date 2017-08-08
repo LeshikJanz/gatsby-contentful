@@ -1,3 +1,18 @@
+@font-face {
+  font-family: Catamaran;
+  src: url(../../assets/fonts/catamaran/Catamaran-Regular.ttf);
+}
+
+div, h1, h2, h3, h4, h5, h6, hr, a {
+  font-family: Catamaran !important;
+  margin-bottom: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .containerFluid {
   margin: 74px 135px 0 135px;
 }
@@ -23,7 +38,6 @@ nav {
     letter-spacing: -0.1px;
     text-align: left;
     color: rgba(29, 28, 31, 0.7);
-    text-decoration: none;
     transition: 0.1s linear;
     cursor: pointer;
 

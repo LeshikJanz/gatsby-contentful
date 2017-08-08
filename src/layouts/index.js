@@ -1,12 +1,11 @@
 import React from "react"
 import Link from "gatsby-link"
 import * as PropTypes from "prop-types"
-import { rhythm } from "../utils/typography"
 import styles from './styles/layout.module.scss';
 const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
 
-import navigationJson from '../../src/assets/mock-data/navigation.json';
+import navigations from '../../src/assets/mock-data/navigation.json';
 
 const propTypes = {
   children: PropTypes.func.isRequired,
@@ -15,8 +14,9 @@ const propTypes = {
 const Navigation = () => (
   <nav>
     {
-      navigationJson.map((nav, i) =>
-        <Link key={i} to={ nav.link } className={styles.navTab}>{nav.label}</Link>)
+      navigations.map((nav, i) =>
+        <Link key={i} to={ nav.link } activeStyle={{ color: '#0431ff', opacity: 1 }}
+              className={styles.navTab}>{nav.label}</Link>)
     }
   </nav>
 );
@@ -27,7 +27,7 @@ class DefaultLayout extends React.Component {
     return (
       <div>
         <div className={cx([ 'header', 'containerFluid' ])}>
-          <h1>LOGO</h1>
+          <Link to="/"><h1>LOGO</h1></Link>
           <Navigation/>
         </div>
         {this.props.children()}
