@@ -1,0 +1,26 @@
+[
+  {
+    "label": "WINNERS",
+    "link": "/winners"
+  },
+  {
+    "label": "FINALISTS",
+    "link": "/finalists"
+  },
+  {
+    "label": "ABOUT",
+    "link": "/about"
+  },
+  {
+    "label": "PRESS",
+    "link": "/press"
+  },
+  {
+    "label": "NEWS",
+    "link": "/news"
+  },
+  {
+    "label": "GET IN TOUCH",
+    "link": "/getintouch"
+  }
+]

@@ -1,5 +1,4 @@
 import React from "react"
-import Link from "gatsby-link"
 import * as PropTypes from "prop-types"
 import { rhythm } from "../utils/typography"
 
@@ -9,15 +8,6 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const Navigation = ({mainNavigation}) => (
-  <nav>
-    {
-      mainNavigation.map((nav, i) =>
-        <Link key={i} to={ nav.link } className={styles.navTab}>{nav.label}</Link>)
-    }
-  </nav>
-);
-
 class IndexPage extends React.Component {
 
   handleMeasure = () => console.log('handleMeasure');
@@ -26,28 +16,25 @@ class IndexPage extends React.Component {
 
   render() {
     const {
-      mainNavigation, mainTitle, mainDescription: {mainDescription}, mainButtons
+      title, description: {description}, buttons
     } = this.props.data.main.edges[0].node;
 
     return (
-      <div className={styles.mainContainer}>
-        <div className={styles.header}>
-          <h1>LOGO</h1>
-          <Navigation mainNavigation={mainNavigation}/>
-        </div>
+      <div>
+
         <div className={styles.welcome}>
-          <div className={styles.mainTitle}>{mainTitle}</div>
+          <div className={styles.title}>{title}</div>
           <br/>
-          <div className={styles.mainDescription}>{mainDescription}</div>
+          <div className={styles.description}>{description}</div>
         </div>
         <br/><br/>
 
         {/* Main Buttons */}
-        <div>
-          {
-            mainButtons.map((b, i) => <button key={i} onClick={this[b.callback]}>{b.title}</button>)
-          }
-        </div>
+        {/*<div>*/}
+          {/*{*/}
+            {/*mainButtons.map((b, i) => <button key={i} onClick={this[b.callback]}>{b.title}</button>)*/}
+          {/*}*/}
+        {/*</div>*/}
       </div>
     )
   }
@@ -63,29 +50,14 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          mainNavigation {
-            link
-            label
-          }
-          mainTitle
-          mainButtons {
+          title
+          buttons {
             title
             callback
           }
-          mainWinnersLabel
-          mainWinnerBlock {
-            logo
-            label
-            companyName
-            companyDescription
-          }
-          mainWinnersButtons {
-            label
-            callback
-          }
-          mainDescription {
+          description {
             id
-            mainDescription
+            description
           }
         }
       }

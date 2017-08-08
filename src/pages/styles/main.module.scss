@@ -1,36 +1,22 @@
-.mainContainer {
-  margin: 50px 80px;
+.welcome {
+  width: 50%;
 
-  .header {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+  > .title {
+    margin-top: 170px;
+    font-family: Catamaran;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+    color: #0431ff;
   }
 
-  nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-
-    > .navTab {
-      float: right;
-      margin: 20px;
-    }
+  > .description {
+    font-family: Catamaran;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: left;
+    color: #1d1c1f;
   }
-
-  .welcome {
-    width: 50%;
-
-    .mainTitle {
-      margin-top: 5%;
-      font-family: WorkSans;
-      color: blue;
-      font-size: 48px;
-      line-height: 1.3;
-    }
-  }
-
-
 }
 

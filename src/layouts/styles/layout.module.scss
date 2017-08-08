@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Catamaran;
+  src: url(/assets/fonts/catamaran/Catamaran-Regular.ttf);
+}
+
+.mainContainer {
+  margin: 74px 135px;
+
+  .header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    > .navTab {
+      margin: 20px;
+      opacity: 0.7;
+      font-family: Catamaran;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.43;
+      letter-spacing: -0.1px;
+      text-align: left;
+      color: rgba(29, 28, 31, 0.7);
+      text-decoration: none;
+      transition: 0.1s linear;
+
+      &:hover {
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+  }
+}
