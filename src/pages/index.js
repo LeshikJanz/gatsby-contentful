@@ -1,8 +1,9 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { rhythm } from "../utils/typography"
+import { TopWinners } from "./Homepage/TopWinners";
 
-import styles from './styles/main.module.scss';
+import styles from './Homepage/styles/main.module.scss';
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -16,25 +17,20 @@ class IndexPage extends React.Component {
 
   render() {
     const {
-      title, description: {description}, buttons
+      title, description: {description}
     } = this.props.data.main.edges[0].node;
+
+    const winners = this.props.data.winners.edges;
 
     return (
       <div>
-
         <div className={styles.welcome}>
           <div className={styles.title}>{title}</div>
           <br/>
           <div className={styles.description}>{description}</div>
         </div>
         <br/><br/>
-
-        {/* Main Buttons */}
-        {/*<div>*/}
-          {/*{*/}
-            {/*mainButtons.map((b, i) => <button key={i} onClick={this[b.callback]}>{b.title}</button>)*/}
-          {/*}*/}
-        {/*</div>*/}
+        <TopWinners winners={winners}/>
       </div>
     )
   }
@@ -62,5 +58,27 @@ export const pageQuery = graphql`
         }
       }
     }
+    winners:   allContentfulWinners(limit: 1000) {
+    edges {
+      node {
+        id
+        award
+        year
+        awardType
+        companyName
+        logo {
+          id
+          file {
+            url
+          }
+        }
+        companyDescription {
+          id
+          companyDescription
+        }
+        webSite
+      }
+    }
+  }
 }
 `

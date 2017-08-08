@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Catamaran;
+  src: url(../../../assets/fonts/catamaran/Catamaran-Regular.ttf);
+}
+
+div, h1, h2, h3, h4, h5, h6, hr {
+  font-family: Catamaran !important;
+  margin-bottom: 0 !important;
+}
+
+h2 {
+  display: flex;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.38;
+  text-align: left;
+  color: #ffffff;
+}
+
+.welcome {
+  padding: 170px 0 135px 170px;
+  width: 50%;
+
+  > .title {
+    font-family: Catamaran;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+    color: #0431ff;
+  }
+
+  > .description {
+    font-family: Catamaran;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: left;
+    color: #1d1c1f;
+  }
+}
+

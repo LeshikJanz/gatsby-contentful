@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Marcus Ericsson <mericsson@gmail.com> (mericsson.com)",
   "dependencies": {
+    "classnames": "^2.2.5",
     "gatsby": "latest",
     "gatsby-link": "latest",
     "gatsby-plugin-google-analytics": "latest",

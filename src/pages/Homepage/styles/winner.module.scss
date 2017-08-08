@@ -1,0 +1,68 @@
+.topWinnersContainer {
+  padding: 134px 105px;
+  height: 821px;
+  background-color: #0431ff;
+
+  .winnerLabel {
+    display: flex;
+    align-items: flex-end;
+
+    > h2 {
+      min-width: 190px;
+    }
+    > hr {
+      width: 100%;
+      margin-bottom: 10px !important;
+      background-color: white;
+    }
+  }
+
+  .winners {
+    display: flex;
+  }
+}
+
+.winnerContainer {
+  cursor: pointer;
+  color: #ffffff;
+  width: 462px;
+  height: 353px;
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+> div:first-child {
+    font-size: 28px;
+    line-height: 1.57;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  > div img {
+    max-height: 65px;
+    margin-bottom: 0 !important;
+  }
+
+  > div:last-child {
+    > .companyName {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.38;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    > .companyDescription {
+      font-size: 16px;
+      line-height: 1.31;
+      text-align: left;
+      color: #ffffff;
+    }
+  }
+
+  &:hover {
+    background-color: #0431ff;
+    box-shadow: 0px 35px 98px 0 rgba(110, 110, 110, 0.4);
+  }
+}
