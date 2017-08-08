@@ -4,6 +4,7 @@ import * as PropTypes from "prop-types"
 import styles from './styles/layout.module.scss';
 const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
+import logo from '../assets/images/logo.png'; // Tell Webpack this JS file uses this image
 
 import navigations from '../../src/assets/mock-data/navigation.json';
 
@@ -27,7 +28,7 @@ class DefaultLayout extends React.Component {
     return (
       <div>
         <div className={cx([ 'header', 'containerFluid' ])}>
-          <Link to="/"><h1>LOGO</h1></Link>
+          <Link to="/"><img src={logo}/></Link>
           <Navigation/>
         </div>
         {this.props.children()}

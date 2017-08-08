@@ -13,4 +13,4 @@ exports.createPages = ({ boundActionCreators: { createPage } }) => {
       component: slash(template)
     });
   })
-}
+};

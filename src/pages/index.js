@@ -12,23 +12,28 @@ class IndexPage extends React.Component {
 
   handleMeasure = () => console.log('handleMeasure');
 
-  handleSatisfaction = () => console.log('handleSatisfaction');
-
   render() {
     const {
-      title, description: {description}
-    } = this.props.data.main.edges[0].node;
+      title, description: { description }, homePicture
+    } = this.props.data.main.edges[ 0 ].node;
 
     const winners = this.props.data.winners.edges;
 
     return (
       <div>
         <div className={styles.welcome}>
-          <div className={styles.title}>{title}</div>
-          <br/>
-          <div className={styles.description}>{description}</div>
+          <div className={styles.welcomeText}>
+            <div className={styles.title}>{title}</div>
+            <br/>
+            <div className={styles.description}>{description}</div>
+            <div className={styles.actions}>
+              <button className={styles.winnerButton} onClick={this.handleMeasure}>HOW WE MEASURE SATISFACTION</button>
+            </div>
+          </div>
+          <div className={styles.welcomePicture}>
+            <img src={homePicture.file.url}/>
+          </div>
         </div>
-        <br/><br/>
         <TopWinners winners={winners}/>
       </div>
     )
@@ -46,14 +51,16 @@ export const pageQuery = graphql`
         node {
           id
           title
-          buttons {
-            title
-            callback
-          }
           description {
             id
             description
           }
+          homePicture {
+          id
+          file {
+            url
+          }
+        }
         }
       }
     }
