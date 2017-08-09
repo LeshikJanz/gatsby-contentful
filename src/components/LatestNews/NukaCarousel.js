@@ -25,8 +25,10 @@ const Decorators = [ {
   position: 'BottomLeft'
 } ];
 
-export const NukaCarousel = ({ children }) => (
+const NukaCarousel = ({ children }) => (
   <Carousel decorators={Decorators}>
     { children }
   </Carousel>
 )
+
+export default NukaCarousel;

@@ -1,7 +1,7 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { TopWinners } from "./homepage/TopWinners";
-import { LatestNews } from "../components/LatestNews"
+import TopWinners from "./homepage/TopWinners";
+import LatestNews from "../components/LatestNews"
 
 import styles from './homepage/styles/main.module.scss';
 

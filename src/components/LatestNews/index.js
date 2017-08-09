@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './style.module.scss';
-import { NukaCarousel } from './NukaCarousel';
+import NukaCarousel from './NukaCarousel';
 
 const Article = ({ article }) => {
   console.log('article');
@@ -15,7 +15,7 @@ const Article = ({ article }) => {
   )
 }
 
-export const LatestNews = ({ latestNews }) => (
+const LatestNews = ({ latestNews }) => (
   <div className={styles.latestNewsContainer}>
     <h2>Latest News</h2>
     <NukaCarousel>
@@ -25,3 +25,5 @@ export const LatestNews = ({ latestNews }) => (
     </NukaCarousel>
   </div>
 );
+
+export default LatestNews;

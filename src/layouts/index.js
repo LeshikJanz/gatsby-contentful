@@ -31,7 +31,7 @@ class DefaultLayout extends React.Component {
           <Link to="/"><img src={logo}/></Link>
           <Navigation/>
         </div>
-        {this.props.children}
+        {this.props.children()}
       </div>
     )
   }
