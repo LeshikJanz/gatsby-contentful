@@ -1,24 +1,88 @@
 {
   "assetsByChunkName": {
+    "path---getintouch": [
+      "path---getintouch-a0e39f21c11f6a62c5ab.js",
+      "path---getintouch-a0e39f21c11f6a62c5ab.js.map"
+    ],
     "page-component---src-pages-index-js": [
-      "page-component---src-pages-index-js-8b811242bc21caaacb0b.js",
-      "page-component---src-pages-index-js-8b811242bc21caaacb0b.js.map"
+      "page-component---src-pages-index-js-d1c537b2225db4317ce6.js",
+      "page-component---src-pages-index-js-d1c537b2225db4317ce6.js.map"
+    ],
+    "page-component---src-pages-finalists-index-js": [
+      "page-component---src-pages-finalists-index-js-bfed0fcf3c79d532c293.js",
+      "page-component---src-pages-finalists-index-js-bfed0fcf3c79d532c293.js.map"
     ],
     "path---index": [
-      "path---index-6cd27c2af75dede568d2.js",
-      "path---index-6cd27c2af75dede568d2.js.map"
+      "path---index-9eddf6eebdf66f8676ae.js",
+      "path---index-9eddf6eebdf66f8676ae.js.map"
+    ],
+    "path---homepage-winner": [
+      "path---homepage-winner-a0e39f21c11f6a62c5ab.js",
+      "path---homepage-winner-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "page-component---src-pages-homepage-winner-js": [
+      "page-component---src-pages-homepage-winner-js-28f2965d4725c9cbdc1b.js",
+      "page-component---src-pages-homepage-winner-js-28f2965d4725c9cbdc1b.js.map"
     ],
     "commons": [
-      "commons-0e949de293d47daa3ebb.js",
-      "commons-0e949de293d47daa3ebb.js.map"
+      "commons-7fa881728f292cd14567.js",
+      "commons-7fa881728f292cd14567.js.map"
+    ],
+    "page-component---src-pages-getintouch-index-js": [
+      "page-component---src-pages-getintouch-index-js-6372b70343dfc56c0f17.js",
+      "page-component---src-pages-getintouch-index-js-6372b70343dfc56c0f17.js.map"
+    ],
+    "path---winners": [
+      "path---winners-a0e39f21c11f6a62c5ab.js",
+      "path---winners-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "page-component---src-pages-winners-index-js": [
+      "page-component---src-pages-winners-index-js-17e0cf7971b0e6bcddcf.js",
+      "page-component---src-pages-winners-index-js-17e0cf7971b0e6bcddcf.js.map"
+    ],
+    "page-component---src-pages-press-index-js": [
+      "page-component---src-pages-press-index-js-64175585e2904a28d4bb.js",
+      "page-component---src-pages-press-index-js-64175585e2904a28d4bb.js.map"
+    ],
+    "page-component---src-pages-news-index-js": [
+      "page-component---src-pages-news-index-js-36c32d9112c7765af5d9.js",
+      "page-component---src-pages-news-index-js-36c32d9112c7765af5d9.js.map"
+    ],
+    "path---news": [
+      "path---news-a0e39f21c11f6a62c5ab.js",
+      "path---news-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "page-component---src-pages-homepage-top-winners-js": [
+      "page-component---src-pages-homepage-top-winners-js-898e34fd848b43f4e557.js",
+      "page-component---src-pages-homepage-top-winners-js-898e34fd848b43f4e557.js.map"
     ],
     "app": [
-      "app-7afd379b952292146a34.js",
-      "app-7afd379b952292146a34.js.map"
+      "app-1a9e6c3cee1fd1376339.js",
+      "app-1a9e6c3cee1fd1376339.js.map"
+    ],
+    "path---press": [
+      "path---press-a0e39f21c11f6a62c5ab.js",
+      "path---press-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "page-component---src-pages-about-index-js": [
+      "page-component---src-pages-about-index-js-fdf1689ee89a0e5282b6.js",
+      "page-component---src-pages-about-index-js-fdf1689ee89a0e5282b6.js.map"
     ],
     "layout-component---index": [
-      "layout-component---index-6460963fabe99caf3a49.js",
-      "layout-component---index-6460963fabe99caf3a49.js.map"
+      "layout-component---index-8c26f5dd361cdf62d627.js",
+      "layout-component---index-8c26f5dd361cdf62d627.js.map"
+    ],
+    "path---finalists": [
+      "path---finalists-a0e39f21c11f6a62c5ab.js",
+      "path---finalists-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---about": [
+      "path---about-a0e39f21c11f6a62c5ab.js",
+      "path---about-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---homepage-top-winners": [
+      "path---homepage-top-winners-a0e39f21c11f6a62c5ab.js",
+      "path---homepage-top-winners-a0e39f21c11f6a62c5ab.js.map"
     ]
   }
 }

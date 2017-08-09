@@ -26,7 +26,11 @@
   "main": "n/a",
   "scripts": {
     "develop": "rm -rf .cache && gatsby develop",
-    "build": "gatsby build",
+    "build": "rm -rf .cache && gatsby build",
     "start": "gatsby serve"
+  },
+  "devDependencies": {
+    "nuka-carousel": "^2.2.0",
+    "react-slick": "^0.14.11"
   }
 }
