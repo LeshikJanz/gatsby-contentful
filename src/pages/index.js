@@ -1,6 +1,7 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { TopWinners } from "./homepage/TopWinners";
+import { LatestNews } from "../components/LatestNews"
 
 import styles from './homepage/styles/main.module.scss';
 
@@ -19,6 +20,8 @@ class IndexPage extends React.Component {
 
     const winners = this.props.data.winners.edges;
 
+    const latestNews = this.props.data.latestNews.edges;
+
     return (
       <div>
         <div className={styles.welcome}>
@@ -35,6 +38,7 @@ class IndexPage extends React.Component {
           </div>
         </div>
         <TopWinners winners={winners}/>
+        <LatestNews latestNews={latestNews}/>
       </div>
     )
   }
@@ -49,14 +53,11 @@ export const pageQuery = graphql`
     main: allContentfulMain(limit: 1000) {
       edges {
         node {
-          id
           title
           description {
-            id
             description
           }
           homePicture {
-          id
           file {
             url
           }
@@ -67,24 +68,30 @@ export const pageQuery = graphql`
     winners:   allContentfulWinners(limit: 1000) {
     edges {
       node {
-        id
         award
         year
         awardType
         companyName
         logo {
-          id
           file {
             url
           }
         }
         companyDescription {
-          id
           companyDescription
         }
         webSite
       }
     }
+  }
+    latestNews: allContentfulNews(limit: 1000) {
+    edges {
+      node {
+        date
+        headLine
+        reporter
+    }
+  }
   }
 }
 `

@@ -1,0 +1,63 @@
+.latestNewsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  background-color: #f4f4fb;
+  padding: 118px 125px 116px 136px;
+
+  > h2 {
+    color: #383739;
+  }
+}
+
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 87px 0;
+
+  > .date {
+    font-family: Catamaran-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.43;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: #0431ff;
+  }
+
+  > .headLine {
+    font-size: 28px;
+    line-height: 1.57;
+    text-align: left;
+    color: #383739;
+    padding: 43px 0 34px 0;
+  }
+
+  > .reporter {
+    font-family: Catamaran-Bold;
+    font-size: 21px;
+    line-height: 2.1;
+    text-align: left;
+    color: #0431ff;
+  }
+}
+
+// Nuka-Carousel
+.slideSwitchers > * {
+  cursor: pointer;
+  &:hover {
+    filter: grayscale(100%);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    filter: grayscale(100%);
+  }
+
+  &:last-child {
+    transform: rotate(180deg);
+    margin-left: 38px;
+  }
+}
