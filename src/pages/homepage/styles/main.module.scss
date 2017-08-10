@@ -1,6 +1,12 @@
 .welcome {
   display: flex;
 
+  @media screen and (max-width: 1050px) {
+    .welcomeText {
+      margin: 0;
+    }
+  }
+
   .welcomeText {
     padding: 170px 0 135px 170px;
     width: 50%;

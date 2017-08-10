@@ -7,6 +7,7 @@ const cx = classNames.bind(styles);
 import logo from '../assets/images/logo.png';
 
 import navigations from '../../src/assets/mock-data/navigation.json';
+import { connect } from "react-redux"
 
 const propTypes = {
   children: PropTypes.func.isRequired,
@@ -39,4 +40,4 @@ class DefaultLayout extends React.Component {
 
 DefaultLayout.propTypes = propTypes
 
-export default DefaultLayout
+export default connect()(DefaultLayout)

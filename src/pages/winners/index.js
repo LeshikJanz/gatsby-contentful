@@ -1,10 +1,24 @@
 import React from 'react';
+import { connect } from "react-redux"
+import LatestNews from "../../components/LatestNews"
+import Following from "../../components/Following/Following"
 
-export default class Winners extends React.Component {
+const Winners = (props) => {
+  console.log('props');
+  console.log(props);
 
-  render() {
-    return (
-      <h1>That is Winners page</h1>
-    )
-  }
+  return(
+    <div>
+      <div className="info">
+        {/*<LatestNews latestNews={latestNews}/>*/}
+        {/*<Following />*/}
+      </div>
+    </div>
+  );
 }
+
+const mapStateToProps = ({ News }) => {
+  return { News }
+}
+
+export default connect(mapStateToProps, null)(Winners)

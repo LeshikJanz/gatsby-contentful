@@ -3,18 +3,26 @@ import * as PropTypes from "prop-types"
 import TopWinners from "./homepage/TopWinners";
 import LatestNews from "../components/LatestNews"
 import Following from "../components/Following/Following";
+import { connect } from "react-redux"
 
 import styles from './homepage/styles/main.module.scss';
+import setNews from "./homepage/actions";
 
 const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
 class IndexPage extends React.Component {
+  componentDidMount() {
+    this.props.setNews(this.props.data.latestNews.edges);
+  }
 
   handleMeasure = () => console.log('handleMeasure');
 
   render() {
+    console.log('this.props');
+    console.log(this.props);
+    
     const {
       title, description: { description }, homePicture
     } = this.props.data.main.edges[ 0 ].node;
@@ -51,13 +59,18 @@ class IndexPage extends React.Component {
 
 IndexPage.propTypes = propTypes
 
-export default IndexPage
+const mapDispatchToProps = dispatch => ({
+  setNews: (news) => dispatch(setNews(news))
+});
+
+export default connect(null, mapDispatchToProps)(IndexPage)
 
 export const pageQuery = graphql`
   query PageQuery {
     main: allContentfulMain(limit: 1000) {
       edges {
         node {
+          id
           title
           description {
             description
@@ -73,6 +86,7 @@ export const pageQuery = graphql`
     winners:   allContentfulWinners(limit: 1000) {
     edges {
       node {
+        id
         award
         year
         awardType
@@ -92,6 +106,7 @@ export const pageQuery = graphql`
     latestNews: allContentfulNews(limit: 1000) {
     edges {
       node {
+        id
         date
         headLine
         reporter

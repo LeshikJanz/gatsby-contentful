@@ -56,6 +56,12 @@ a {
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .containerFluid {
+    margin: 0;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: row;
