@@ -16,6 +16,7 @@
 .awcache
 .cache
 .strong-pm
+public
 coverage
 node_modules
 npm-debug.log
