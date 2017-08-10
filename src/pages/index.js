@@ -2,7 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import TopWinners from "./homepage/TopWinners";
 import LatestNews from "../components/LatestNews"
-import Following from "../components/Following/Following";
+import Following from "../components/Following/index";
 
 import styles from './homepage/styles/main.module.scss';
 
