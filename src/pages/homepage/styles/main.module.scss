@@ -1,12 +1,3 @@
-h2 {
-  display: flex;
-  font-family: Catamaran-Bold;
-  font-size: 32px;
-  line-height: 1.38;
-  text-align: left;
-  color: #ffffff;
-}
-
 .welcome {
   display: flex;
 
@@ -65,4 +56,8 @@ h2 {
       max-height: 300px;
     }
   }
+}
+
+.info {
+  display: flex;
 }

@@ -8,9 +8,39 @@
   src: url(../../assets/fonts/catamaran/Catamaran-Bold.ttf);
 }
 
-div, h1, h3, h4, h5, h6, hr, a {
+div, h1, h3, h4, h5, h6, hr, a, img, input {
   font-family: Catamaran;
   margin-bottom: 0 !important;
+}
+
+h2 {
+  display: flex;
+  font-family: Catamaran-Bold;
+  font-size: 32px;
+  line-height: 1.38;
+  text-align: left;
+  color: #ffffff;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 1.31;
+  text-align: left;
+  color: #ffffff;
+}
+
+input {
+  padding: 19px;
+  height: 46px;
+  background-color: #f4f4fb;
+  border: none;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 1.86;
+  text-align: left;
+  color: rgba(56, 55, 57, 0.3);
 }
 
 a {
@@ -20,6 +50,10 @@ a {
 
 .containerFluid {
   margin: 74px 135px 0 135px;
+
+  .logo {
+    max-height: 46px;
+  }
 }
 
 .header {

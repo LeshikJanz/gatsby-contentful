@@ -1,0 +1,48 @@
+.followingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 8%;
+
+  h4 {
+    color: #383739;
+    padding-bottom: 27px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .subscription {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 343px;
+    }
+
+    button {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      background-color: #0431ff;
+    }
+  }
+
+  .followIcons {
+    display: flex;
+
+    > img {
+      cursor: pointer;
+      margin-right: 26px;
+
+      &:hover {
+        filter: grayscale(100%);
+      }
+    }
+  }
+}

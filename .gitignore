@@ -17,5 +17,6 @@
 .cache
 .strong-pm
 coverage
+public
 node_modules
 npm-debug.log

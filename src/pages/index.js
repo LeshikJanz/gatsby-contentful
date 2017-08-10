@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import TopWinners from "./homepage/TopWinners";
 import LatestNews from "../components/LatestNews"
+import Following from "../components/Following/Following";
 
 import styles from './homepage/styles/main.module.scss';
 
@@ -38,7 +39,11 @@ class IndexPage extends React.Component {
           </div>
         </div>
         <TopWinners winners={winners}/>
-        <LatestNews latestNews={latestNews}/>
+        <div className={styles.info}>
+          <LatestNews latestNews={latestNews}/>
+          <Following />
+        </div>
+
       </div>
     )
   }

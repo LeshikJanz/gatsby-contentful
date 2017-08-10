@@ -2,18 +2,13 @@ import React from "react";
 import styles from './style.module.scss';
 import NukaCarousel from './NukaCarousel';
 
-const Article = ({ article }) => {
-  console.log('article');
-  console.log(article);
-
-  return (
-    <div className={styles.articleContainer}>
-      <div className={styles.date}>{article.date}</div>
-      <div className={styles.headLine}>{article.headLine}</div>
-      <div className={styles.reporter}>{article.reporter}</div>
-    </div>
-  )
-}
+const Article = ({ article }) => (
+  <div className={styles.articleContainer}>
+    <div className={styles.date}>{article.date}</div>
+    <div className={styles.headLine}>{article.headLine}</div>
+    <div className={styles.reporter}>{article.reporter}</div>
+  </div>
+);
 
 const LatestNews = ({ latestNews }) => (
   <div className={styles.latestNewsContainer}>
