@@ -41,24 +41,26 @@ export default Winners;
 
 export const pageQuery = graphql`
   query WinnersQuery {
-    winners:   allContentfulWinners(limit: 1000) {
+    winners:  allContentfulFinalists(filter: { isWinner: {eq: true} }) {
     edges {
-      node {
-        award
-        year
-        awardType
+      node { 
+        id
         companyName
         logo {
           file {
             url
           }
         }
-        companyDescription {
-          companyDescription
-        }
         webSite
-      }
+        category {
+          label
+          date
+        }
+        medal {
+          label
+        }
     }
+  }
   }
     latestNews: allContentfulNews(limit: 1000) {
     edges {

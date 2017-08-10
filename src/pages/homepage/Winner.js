@@ -10,7 +10,7 @@ const Winner = ({winner}) => {
       {
         winner &&
         <div className={styles.winnerContainer}>
-          <div>{winner.award}</div>
+          <div>{winner.category.label}</div>
           <div><img src={logo} alt={winner.companyName}/></div>
           <div>
             <div className={styles.companyName}>{winner.companyName}</div>

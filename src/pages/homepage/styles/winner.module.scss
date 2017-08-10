@@ -1,6 +1,6 @@
 .topWinnersContainer {
-  padding: 134px 105px;
-  height: 821px;
+  padding: 8% 7% 1% 8%;
+  //height: 821px;
   background-color: #0431ff;
 
   .winnerLabel {
@@ -19,6 +19,7 @@
 
   .winners {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -26,7 +27,7 @@
   cursor: pointer;
   color: #ffffff;
   width: 462px;
-  height: 353px;
+  min-height: 353px;
   padding: 30px 35px;
   display: flex;
   flex-direction: column;
@@ -42,6 +43,7 @@
 
   > div img {
     max-height: 65px;
+    margin-top: 46px;
     margin-bottom: 0 !important;
   }
 
@@ -51,6 +53,7 @@
       font-weight: bold;
       line-height: 1.38;
       text-align: left;
+      margin-top: 46px;
       color: #ffffff;
     }
 
@@ -88,5 +91,11 @@
     background-color: #0431ff;
     border: solid 2px #ffffff;
     color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .topWinnersContainer {
+    padding: 3%;
   }
 }
