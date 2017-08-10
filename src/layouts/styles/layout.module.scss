@@ -1,3 +1,5 @@
+@import url("https://unpkg.com/react-select/dist/react-select.css");
+
 @font-face {
   font-family: Catamaran;
   src: url(../../assets/fonts/catamaran/Catamaran-Regular.ttf);
@@ -8,7 +10,7 @@
   src: url(../../assets/fonts/catamaran/Catamaran-Bold.ttf);
 }
 
-div, h1, h3, h4, h5, h6, hr, a, img, input {
+div, h1, h3, h4, h5, h6, hr, a, img, input, span {
   font-family: Catamaran;
   margin-bottom: 0 !important;
 }

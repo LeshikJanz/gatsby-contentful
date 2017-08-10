@@ -1,0 +1,129 @@
+:global .Select-control {
+  height: 51px !important;
+  border: solid 2px #0431ff !important;
+  border-radius: 0 !important;
+  color: #ffffff;
+  font-size: 15px !important;
+
+  .Select-value-label {
+    color: #0431ff !important;
+  }
+
+  .Select-clear {
+    display: none;
+  }
+}
+
+:global .Select-menu-outer {
+  font-size: 15px !important;
+}
+
+:global .Select-value {
+  display: flex !important;
+  align-items: center !important;
+}
+
+:global .is-focused {
+  > .Select-control {
+    background-color: #0431ff !important;
+    border: solid 2px #0431ff;
+    border-radius: 0;
+    height: 51px;
+
+    .Select-input > input {
+      display: flex !important;
+      align-items: center;
+      font-family: Catamaran;
+      color: #ffffff !important;
+      padding: 0 !important;
+    }
+
+    .Select-value-label {
+      color: transparent !important;
+    }
+  }
+
+  > .Select-menu-outer .Select-option {
+    border: solid 2px #0431ff;
+    border-bottom: none;
+    color: #0431ff;
+
+    &.is-focused {
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      background-color: #f4f4fb !important;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: solid 2px #0431ff;
+    }
+  }
+
+  .Select-arrow-zone {
+    > span {
+      display: none;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      right: 22px;
+      top: 17px;
+      border: solid #ffffff;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+:global .is-pseudo-focused {
+  > .Select-control {
+    background-color: #ffffff !important;
+
+    .Select-value-label {
+      color: #0431ff !important;
+    }
+  }
+
+  .Select-arrow-zone {
+    > span {
+      display: none;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      right: 22px;
+      top: 17px;
+      border: solid #0431ff;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+:global .Select-arrow-zone {
+  padding: 0;
+  position: relative;
+
+  > span {
+    position: absolute;
+    right: 22px;
+    top: 17px;
+    border: solid #0431ff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+}
