@@ -1,26 +1,42 @@
+@import "../../../styles/common.module";
 @import "../../../styles/mixins.module";
 
-.topWinnersContainer {
-  padding: 127px 7% 0 8%;
-  background-color: #0431ff;
+.dropdownsContainer {
+  display: flex;
+  padding: 74px 7% 0 8%;
 
-  .winnerLabel {
-    @include category-label;
-    > hr {
-      background-color: #ffffff;
-    }
+  > *:first-child {
+    margin-right: 20px;
   }
+}
+
+.winnerCategoryContainer {
+  padding: 74px 7% 0 8%;
 
   .winners {
     display: flex;
     flex-wrap: wrap;
   }
+
+  .winnerCategory {
+    display: none;
+  }
+}
+
+.categoryLabel {
+  > h2 {
+    color: #383739;
+  }
+
+  > hr {
+    color: #383739;
+    background-color: #383739;
+  }
+
+  @include category-label;
 }
 
 .winnerContainer {
-  cursor: pointer;
-  color: #ffffff;
-  width: 462px;
   min-height: 353px;
   padding: 30px 35px;
   display: flex;
@@ -32,14 +48,12 @@
     font-size: 28px;
     line-height: 1.57;
     text-align: left;
-    color: #ffffff;
   }
 
   > div img {
     min-height: 65px;
     margin-top: 46px;
     margin-bottom: 0 !important;
-    filter: brightness(0) invert(1);
   }
 
   > div.company {
@@ -50,29 +64,35 @@
       line-height: 1.38;
       text-align: left;
       margin-top: 46px;
-      color: #ffffff;
     }
 
     > .companyDescription {
       font-size: 16px;
       line-height: 1.31;
       text-align: left;
-      color: #ffffff;
     }
   }
 
-  &:hover {
-    background-color: #0431ff;
-    box-shadow: 0px 35px 98px 0 rgba(0, 0, 0, 0.4);
-  }
-
-  .winnerMedal {
-    display: none;
-  }
+  //&:hover {
+  //  box-shadow: 0px 35px 98px 0 rgba(0, 0, 0, 0.4);
+  //}
 
   .winnerWebsite {
-    display: none;
+    font-family: Catamaran-Bold;
+    color: #0431ff;
+    margin-top: 26px;
+
+    &:hover {
+      color: #383739;
+      cursor: pointer;
+    }
   }
+}
+
+.winnerMedal {
+  color: #0431ff;
+  font-family: Catamaran-Bold;
+  font-size: 15px;
 }
 
 .winnerButtonWhite {
@@ -95,11 +115,5 @@
     background-color: #0431ff;
     border: solid 2px #ffffff;
     color: #ffffff;
-  }
-}
-
-@media screen and (max-width: 820px) {
-  .topWinnersContainer {
-    padding: 3%;
   }
 }
