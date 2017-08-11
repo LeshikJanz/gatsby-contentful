@@ -5,6 +5,8 @@ import LatestNews from "../components/LatestNews"
 import Following from "../components/Following/index";
 
 import styles from './homepage/styles/main.module.scss';
+const classNames = require('classnames/bind');
+const cx = classNames.bind(styles);
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -25,7 +27,7 @@ class IndexPage extends React.Component {
 
     return (
       <div>
-        <div className={styles.welcome}>
+        <div className={cx(['mainContainer', 'welcome'])}>
           <div className={styles.welcomeText}>
             <div className={styles.title}>{title}</div>
             <br/>
