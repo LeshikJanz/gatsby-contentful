@@ -10,7 +10,7 @@ import { compose, withState } from 'recompose';
 const Winners = (props) => {
   const {
     dropdownCategoryValue, dropdownYearValue, handleCategorySelect, handleYearSelect,
-    data: { winners, latestNews, categories }
+    data: {winners, latestNews, categories}
   } = props;
 
   const getYears = () =>
@@ -26,7 +26,7 @@ const Winners = (props) => {
         <Select
           name="Select Year"
           value={dropdownYearValue}
-          style={{ minWidth: '98px' }}
+          style={{minWidth: '98px'}}
           placeholder=""
           options={getYears()}
           onChange={handleYearSelect}
@@ -34,20 +34,18 @@ const Winners = (props) => {
         <Select
           name="Select Category"
           value={dropdownCategoryValue}
-          style={{ minWidth: '355px' }}
+          style={{minWidth: '355px'}}
           placeholder=""
           options={categories.edges.map(e => e.node)}
           onChange={handleCategorySelect}
         />
       </div>
       <div>
-        <VericalCarousel>
-          {
-            categories.edges.map((c, i) =>
-              <WinnerCategory key={i}
-                              winners={winners.edges.filter(w => w.node.category.label === c.node.label)}/>)
-          }
-        </VericalCarousel>
+        {
+          categories.edges.map((c, i) =>
+            <WinnerCategory key={i}
+                            winners={winners.edges.filter(w => w.node.category.label === c.node.label)}/>)
+        }
       </div>
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
@@ -58,8 +56,8 @@ const Winners = (props) => {
 };
 
 export default compose(
-  withState('dropdownCategoryValue', 'handleCategorySelect', { value: 'All Categories', label: 'All Categories' }),
-  withState('dropdownYearValue', 'handleYearSelect', { value: '2017', label: '2017' })
+  withState('dropdownCategoryValue', 'handleCategorySelect', {value: 'All Categories', label: 'All Categories'}),
+  withState('dropdownYearValue', 'handleYearSelect', {value: '2017', label: '2017'})
 )(Winners);
 
 export const pageQuery = graphql`
