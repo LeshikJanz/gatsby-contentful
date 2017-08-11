@@ -8,7 +8,7 @@ import styles from './homepage/styles/main.module.scss';
 
 const propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 class IndexPage extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from "react"
 import styles from './styles/winner.module.scss'
-import Winner from './Winner'
+import Winner from '../../components/Winner'
 
 const TopWinners = ({ winners }) => (
   <div>

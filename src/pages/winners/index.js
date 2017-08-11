@@ -8,10 +8,6 @@ import WinnerCategory from './components/WinnerCategory';
 import { compose, withState } from 'recompose';
 
 const Winners = (props) => {
-
-  console.log('props');
-  console.log(props);
-
   const {
     dropdownCategoryValue, dropdownYearValue, handleCategorySelect, handleYearSelect,
     data: { winners, latestNews, categories }
@@ -47,8 +43,9 @@ const Winners = (props) => {
       <div>
         <VericalCarousel>
           {
-            categories.edges.map((c, i) => <WinnerCategory key={i}
-                                                           winners={winners.edges.filter(w => w.node.category.label === c.node.label)}/>)
+            categories.edges.map((c, i) =>
+              <WinnerCategory key={i}
+                              winners={winners.edges.filter(w => w.node.category.label === c.node.label)}/>)
           }
         </VericalCarousel>
       </div>
