@@ -75,6 +75,16 @@
   }
 }
 
+@media screen and (max-width: 510px) {
+  .winnerContainer {
+    width: 362px !important;
+  }
+
+  .winnerLabel {
+    padding: 60px 0 40px 40px !important;
+  }
+}
+
 .winnerButtonWhite {
   margin: 92px;
   cursor: pointer;

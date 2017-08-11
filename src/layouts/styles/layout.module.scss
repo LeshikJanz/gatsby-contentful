@@ -50,6 +50,11 @@ a {
   color: black;
 }
 
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
 .containerFluid {
   //margin: 74px 135px 0 135px;
   padding: 74px 7% 0 8%;
@@ -93,3 +98,5 @@ nav {
 button.winner-button {
   background-color: blue;
 }
+
+@import "./mobile.module";

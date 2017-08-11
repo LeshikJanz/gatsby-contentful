@@ -1,0 +1,11 @@
+.mobileView {
+  &.containerFluid {
+    display: flex;
+    flex-direction: column;
+
+    .navigation {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

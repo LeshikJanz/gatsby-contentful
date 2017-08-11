@@ -5,7 +5,7 @@
 
   .welcomeText {
     padding: 170px 0 135px 170px;
-    width: 50%;
+    width: 90%;
 
     > .title {
       font-family: Catamaran;
@@ -49,6 +49,7 @@
       }
     }
   }
+
   .welcomePicture {
     align-self: center;
     text-align: center;
@@ -57,5 +58,15 @@
     > img {
       max-height: 300px;
     }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .welcomeText {
+    padding: 60px 0 60px 40px !important;
+  }
+
+  .welcomePicture {
+    display: none;
   }
 }

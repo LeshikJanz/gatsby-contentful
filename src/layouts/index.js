@@ -12,55 +12,33 @@ const propTypes = {
   children: PropTypes.func.isRequired,
 };
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      windowWidth: window.innerWidth,
-      mobileNavVisible: false
-    };
-  }
+const Navigation = ({ mobileNavVisible }) => (
+  <nav className={styles.navigation}>
+    {
+      navigations.map((nav, i) =>
+        <Link key={i} to={ nav.link } activeStyle={{ color: '#0431ff', opacity: 1 }}
+              className={styles.navTab}>{nav.label}</Link>)
+    }
+  </nav>
+);
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize.bind(this));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize.bind(this));
-  }
-
-  handleResize() {
-    this.setState({mobileNavVisible: window.innerWidth < 700});
-  }
-
-  render() {
-
-    return (
-      <nav >
-        {
-          navigations.map((nav, i) =>
-            <Link key={i} to={ nav.link } activeStyle={{color: '#0431ff', opacity: 1}}
-                  className={styles.navTab}>{nav.label}</Link>)
-        }
-      </nav>
-    )
-  }
-}
-
-class DefaultLayout extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <div className={cx(['header', 'containerFluid'])}>
-          <Link to="/"><img className={ styles.logo } src={logo}/></Link>
-          <Navigation/>
-        </div>
-        {this.props.children()}
-      </div>
-    )
-  }
-}
+const DefaultLayout = compose(
+  withState('isMobileView', 'handleResize'),
+  lifecycle({
+    componentDidMount() {
+      window.addEventListener('resize', (e) => this.props.handleResize(e.target.innerWidth < 870));
+      this.props.handleResize( window.innerWidth < 870);
+    }
+  })
+)(({ isMobileView, children }) => (
+  <div>
+    <div className={cx(['header', 'containerFluid', { [styles.mobileView]: isMobileView }])}>
+      <Link to="/"><img className={ styles.logo } src={logo}/></Link>
+      <Navigation/>
+    </div>
+    {children()}
+  </div>
+));
 
 DefaultLayout.propTypes = propTypes
 
