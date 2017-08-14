@@ -30,7 +30,7 @@ const Winners = (props) => {
         <Select
           name="Select Year"
           value={selectedYear}
-          style={{minWidth: '98px'}}
+          style={{minWidth: '98px', marginTop: '20px'}}
           placeholder=""
           options={getYears()}
           onChange={handleDateSelect}
@@ -39,7 +39,7 @@ const Winners = (props) => {
           name="Select Category"
           clearable={false}
           value={selectedCategory}
-          style={{minWidth: '355px'}}
+          style={{minWidth: '355px', marginTop: '20px'}}
           placeholder=""
           options={categories.edges.map(e => e.node)}
           onChange={handleCategorySelect}
@@ -52,7 +52,8 @@ const Winners = (props) => {
       }
       {
         selectedWinners && !selectedWinners.length &&
-        <h1 className={styles.mainContainer}>There is no one winner for {selectedCategory.label + ' ' + selectedYear.label}</h1>
+        <h1 className={styles.mainContainer}>There is no one winner
+          for {selectedCategory.label + ' ' + selectedYear.label}</h1>
       }
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>

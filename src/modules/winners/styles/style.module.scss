@@ -4,16 +4,15 @@
 .dropdownsContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 74px 7% 0 8%;
+  padding: 74px 7% 20px 8%;
 
   > *:first-child {
     margin-right: 20px;
-    margin-bottom: 20px !important;
   }
 }
 
 .winnerCategoryContainer {
-  padding: 74px 7% 0 8%;
+  padding: 34px 7% 0 8%;
 
   .winners {
     display: flex;
