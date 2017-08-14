@@ -3,7 +3,6 @@ import LatestNews from '../../components/LatestNews';
 import Following from '../../components/Following';
 import styles from './styles/style.module.scss';
 import Select from 'react-select';
-import VericalCarousel from './components/VerticalCarousel';
 import WinnerCategory from './components/WinnerCategory';
 import { compose, withState } from 'recompose';
 

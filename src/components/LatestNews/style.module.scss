@@ -1,3 +1,5 @@
+@import "../../styles/mixins.module";
+
 .latestNewsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -16,6 +18,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  height: 550px !important;
   padding: 87px 0;
 
   > .date {
@@ -29,19 +32,29 @@
   }
 
   > .headLine {
+    overflow: auto;
     font-size: 28px;
     line-height: 1.57;
     text-align: left;
     color: #383739;
     padding: 43px 0 34px 0;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
   }
 
   > .reporter {
     font-family: Catamaran-Bold;
+    cursor: pointer;
     font-size: 21px;
     line-height: 2.1;
     text-align: left;
     color: #0431ff;
+
+    &:hover {
+      color: #383739;
+    }
   }
 }
 
@@ -72,4 +85,12 @@
   .articleContainer {
     padding: 15% 0;
   }
+}
+
+:global .slider-list {
+  //height: auto !important;
+}
+
+:global .slider-slide {
+  //position: relative !important;
 }

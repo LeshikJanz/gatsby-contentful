@@ -6,7 +6,6 @@ const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
 
 const Decorators = [{
-  mixins: [Carousel.ControllerMixin],
   component: React.createClass({
     render() {
       const { currentSlide, previousSlide, nextSlide, slideCount } = this.props;
