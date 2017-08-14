@@ -13,12 +13,12 @@ const propTypes = {
   children: PropTypes.func.isRequired,
 };
 
-const Navigation = ({ mobileNavVisible }) => (
+const Navigation = ({isMobileView}) => (
   <nav className={styles.navigation}>
     {
       navigations.map((nav, i) =>
-        <Link key={i} to={ nav.link } 
-              activeStyle={mobileNavVisible ? { color: '#0431ff' } : { color: 'yellow' }}
+        <Link key={i} to={ nav.link }
+              activeStyle={isMobileView ? {color: 'yellow'} : {color: '#0431ff'}}
               className={styles.navTab}>{nav.label}</Link>)
     }
   </nav>
@@ -29,14 +29,14 @@ const DefaultLayout = compose(
   lifecycle({
     componentDidMount() {
       window.addEventListener('resize', (e) => this.props.handleResize(e.target.innerWidth < 870));
-      this.props.handleResize( window.innerWidth < 870);
+      this.props.handleResize(window.innerWidth < 870);
     }
   })
-)(({ isMobileView, children }) => (
+)(({isMobileView, children}) => (
   <div>
-    <div className={cx(['header', 'containerFluid', { [styles.mobileView]: isMobileView }])}>
+    <div className={cx(['header', 'containerFluid', {[styles.mobileView]: isMobileView}])}>
       <Link to="/"><img className={ styles.logo } src={isMobileView ? logoWhite : logo}/></Link>
-      <Navigation/>
+      <Navigation isMobileView={isMobileView}/>
     </div>
     {children()}
   </div>
