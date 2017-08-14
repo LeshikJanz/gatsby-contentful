@@ -10,7 +10,7 @@ import { DEFAULT_CATEGORY_FILTER } from "./constants/index";
 const Winners = (props) => {
   const {
     handleCategorySelect, handleDateSelect, selectedCategory, selectedYear, selectedWinners,
-    data: { winners, latestNews, categories }
+    data: {winners, latestNews, categories}
   } = props;
 
   const getYears = () =>
@@ -30,7 +30,7 @@ const Winners = (props) => {
         <Select
           name="Select Year"
           value={selectedYear}
-          style={{ minWidth: '98px' }}
+          style={{minWidth: '98px'}}
           placeholder=""
           options={getYears()}
           onChange={handleDateSelect}
@@ -39,7 +39,7 @@ const Winners = (props) => {
           name="Select Category"
           clearable={false}
           value={selectedCategory}
-          style={{ minWidth: '355px' }}
+          style={{minWidth: '355px'}}
           placeholder=""
           options={categories.edges.map(e => e.node)}
           onChange={handleCategorySelect}
@@ -50,6 +50,10 @@ const Winners = (props) => {
           <WinnerCategory key={i}
                           winners={getWinners(c)}/>)
       }
+      {
+        selectedWinners && !selectedWinners.length &&
+        <h1 className={styles.mainContainer}>There is no one winner for {selectedCategory.label + ' ' + selectedYear.label}</h1>
+      }
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
         <Following />
@@ -59,12 +63,12 @@ const Winners = (props) => {
 };
 
 export default compose(
-  withState('selectedCategory', 'setCategory', { value: 'All Categories', label: 'All Categories' }),
-  withState('selectedYear', 'setYear', { value: '2017', label: '2017' }),
+  withState('selectedCategory', 'setCategory', {value: 'All Categories', label: 'All Categories'}),
+  withState('selectedYear', 'setYear', {value: '2017', label: '2017'}),
   withState('selectedWinners', 'setWinners', null),
   withProps((props) => ({
     runAllCategoriesFilter: (date) => {
-      props.setWinners(props.data.winners.edges.filter(({ node: { category } }) =>
+      props.setWinners(props.data.winners.edges.filter(({node: {category}}) =>
       category.date.split('-')[0] == date));
     },
     runFilter: (item, categoryFilter, dateFilter) => {
@@ -81,7 +85,7 @@ export default compose(
 
       // Filtering out winners by category
       const filteredWinners = props.data.winners.edges.filter(
-        ({ node: { category } }) => props.runFilter(category, evt.label, props.selectedYear.label)
+        ({node: {category}}) => props.runFilter(category, evt.label, props.selectedYear.label)
       );
 
       props.setWinners(filteredWinners);
@@ -97,7 +101,7 @@ export default compose(
 
       // Filtering out winners by category
       const filteredWinners = props.data.winners.edges.filter(
-        ({ node: { category } }) => props.runFilter(category, props.selectedCategory.label, evt.label)
+        ({node: {category}}) => props.runFilter(category, props.selectedCategory.label, evt.label)
       );
 
       // Filtering out winners by year
@@ -106,7 +110,7 @@ export default compose(
   }),
   lifecycle({
     componentDidMount() {
-      this.props.data.categories.edges.unshift({ node: DEFAULT_CATEGORY_FILTER });
+      this.props.data.categories.edges.unshift({node: DEFAULT_CATEGORY_FILTER});
       this.props.handleCategorySelect(this.props.selectedCategory);
       this.props.handleDateSelect(this.props.selectedYear);
     },
@@ -150,6 +154,7 @@ export const pageQuery = graphql`
         }
         medal {
           label
+          order
         }
     }
     }

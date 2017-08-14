@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
 const Winner = ({winner, styles}) => {
   const companyDescription = winner.companyDescription.companyDescription;
   const logo = winner.logo && winner.logo.file.url;
 
   return (
-    <div style={{ flex: 1 }}>
+    <div className={styles.selectedWinner}>
       {
         winner &&
         <div className={styles.winnerContainer}>
@@ -16,7 +16,7 @@ const Winner = ({winner, styles}) => {
             <div className={styles.companyName}>{winner.companyName}</div>
             <div className={ styles.companyDescription }>{companyDescription}</div>
           </div>
-          <div className={styles.winnerWebsite}>{winner.webSite}</div>
+          <a target="_blank" className={styles.winnerWebsite} href={winner.webSite}>{winner.webSite}</a>
         </div>
       }
     </div>

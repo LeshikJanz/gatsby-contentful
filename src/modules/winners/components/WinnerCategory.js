@@ -12,7 +12,9 @@ const WinnerCategory = ({ winners }) => (
         </div>
         <div className={styles.winners}>
           {
-            winners && winners.map((w, i) => <Winner key={i} winner={w.node} styles={styles}/>)
+            winners && winners
+              .sort((a,b) => a.node.medal.order - b.node.medal.order)
+              .map((w, i) => <Winner key={i} winner={w.node} styles={styles}/>)
           }
         </div>
       </div>

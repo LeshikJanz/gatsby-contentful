@@ -36,6 +36,14 @@
   @include category-label;
 }
 
+.selectedWinner {
+  flex: 1;
+
+  &:first-child {
+    flex: 2;
+  }
+}
+
 .winnerContainer {
   min-height: 353px;
   padding: 30px 35px;
@@ -52,6 +60,7 @@
 
   > div img {
     min-height: 65px;
+    max-height: 100px;
     margin-top: 46px;
     margin-bottom: 0 !important;
   }
