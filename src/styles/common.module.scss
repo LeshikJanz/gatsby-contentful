@@ -6,7 +6,17 @@
 
 @media screen and (max-width: 820px) {
   .mainContainer {
-    padding: 60px 0 60px 40px !important;
+    padding: 0 0 0 30px !important;
+
+    > .welcomeText {
+      .title, .description, br {
+        display: none;
+      }
+
+      .actions {
+        margin: 0 !important;
+      }
+    }
   }
 }
 

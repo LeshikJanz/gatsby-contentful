@@ -3,10 +3,12 @@
 
 .dropdownsContainer {
   display: flex;
+  flex-wrap: wrap;
   padding: 74px 7% 0 8%;
 
   > *:first-child {
     margin-right: 20px;
+    margin-bottom: 20px !important;
   }
 }
 
@@ -88,6 +90,7 @@
 
   .winnerWebsite {
     font-family: Catamaran-Bold;
+    font-size: 16px;
     color: #0431ff;
     margin-top: 26px;
 
