@@ -6,7 +6,7 @@ const navigations = require('./src/assets/mock-data/navigation.json');
 exports.createPages = ({ boundActionCreators: { createPage } }) => {
 
   navigations.forEach((n) => {
-    const template = path.resolve(`./src/pages/${n.label.replace(/\s/ig, '').toLowerCase()}/index.js`);
+    const template = path.resolve(`./src/modules/${n.label.replace(/\s/ig, '').toLowerCase()}/index.js`);
 
     createPage({
       path: n.link,

@@ -5,7 +5,7 @@ import styles from './styles/style.module.scss';
 import Select from 'react-select';
 import WinnerCategory from './components/WinnerCategory';
 import { compose, withState, withHandlers, lifecycle, withProps } from 'recompose';
-import DEFAULT_CATEGORY_FILTER from "./contants/index";
+import { DEFAULT_CATEGORY_FILTER } from "./constants/index";
 
 const Winners = (props) => {
   const {
@@ -109,6 +109,9 @@ export default compose(
       this.props.data.categories.edges.unshift({ node: DEFAULT_CATEGORY_FILTER });
       this.props.handleCategorySelect(this.props.selectedCategory);
       this.props.handleDateSelect(this.props.selectedYear);
+    },
+    componentWillUnmount() {
+      this.props.data.categories.edges.shift();
     }
   })
 )
