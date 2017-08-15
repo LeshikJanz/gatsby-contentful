@@ -24,7 +24,10 @@ const Winners = (props) => {
         }))
     ];
 
-  const getCategories = () => [DEFAULT_CATEGORY_FILTER, ...categories.edges.map(e => e.node)]
+  const getCategories = () => [DEFAULT_CATEGORY_FILTER, ...categories.edges.map(e => e.node)];
+
+  const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => filter.label === category.label)
+    .sort((a, b) => a.node.medal.order - b.node.medal.order);
 
   return (
     <div>
@@ -33,7 +36,7 @@ const Winners = (props) => {
           name="Select Year"
           value={selectedYear}
           clearable={false}
-          style={{ minWidth: '98px' }}
+          style={{ minWidth: '128px', marginTop: '20px' }}
           placeholder=""
           options={getYears()}
           onChange={handleDateSelect}
@@ -42,7 +45,7 @@ const Winners = (props) => {
           name="Select Category"
           clearable={false}
           value={selectedCategory}
-          style={{ minWidth: '355px' }}
+          style={{ minWidth: '355px', marginTop: '20px' }}
           placeholder=""
           options={getCategories()}
           onChange={handleCategorySelect}
@@ -52,7 +55,13 @@ const Winners = (props) => {
         getCategories()
           .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
           .map((c, i) => <WinnerCategory key={i}
-                                         winners={selectedWinners.filter(({ node: { category } }) => category.label === c.label)}/>)
+                                         winners={applyWinnersGrouping(c)}
+          />)
+      }
+      {
+        selectedWinners && !selectedWinners.length &&
+        <h1 className={styles.mainContainer}>There is no one winner
+          for {selectedCategory.label + ' ' + selectedYear.label}</h1>
       }
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
@@ -120,6 +129,7 @@ export const pageQuery = graphql`
         }
         medal {
           label
+          order
         }
     }
     }
