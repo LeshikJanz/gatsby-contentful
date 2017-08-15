@@ -8,23 +8,26 @@ import { compose, withState } from 'recompose';
 
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 
-const Finalists = ({ data: { latestNews, winners, categories }, selectedYear, setYear }) => {
+const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, setYear }) => {
   const getYears = (props) =>
     [DEFAULT_DATE_FILTER,
-      ...[...new Set(winners.edges.map(e => e.node.category.date.split('-')[0]))]
+      ...[...new Set(finalists.edges.map(e => e.node.category.date.split('-')[0]))]
         .map(y => ({
           value: y,
           label: y
         }))
     ];
 
+  console.log('finalists');
+  console.log(finalists);
+
   const getFilteredCategories = () =>
     categories.edges
       .map(e => e.node)
       .sort((a, b) => a.label.localeCompare(b.label));
 
-  const applyWinnersFiltering = (filter) =>
-    winners.edges
+  const applyFinalistsFiltering = (filter) =>
+    finalists.edges
       .filter(({ node: { category } }) => (filter.label === category.label) &&
       (selectedYear === DEFAULT_DATE_FILTER ? true : selectedYear.label === category.date.split('-')[0]));
 
@@ -42,7 +45,7 @@ const Finalists = ({ data: { latestNews, winners, categories }, selectedYear, se
       </div>
       {
         getFilteredCategories()
-          .map((c, i) => <FinalistCategory key={i} winners={applyWinnersFiltering(c)}/>
+          .map((c, i) => <FinalistCategory key={i} finalists={applyFinalistsFiltering(c)}/>
           )
       }
 
@@ -71,7 +74,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    winners: allContentfulFinalists(filter: { isWinner: {eq: true} }) {
+    finalists: allContentfulFinalists(limit: 1000) {
     edges {
       node { 
         id

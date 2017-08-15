@@ -4,11 +4,11 @@
 .winnerCategoryContainer {
   padding: 63px 7% 0 8%;
 
-  .winners {
+  .finalists {
     display: flex;
     flex-wrap: wrap;
 
-    > div.winnerItem {
+    > div.finalist {
       cursor: pointer;
       line-height: 4;
       opacity: 0.8;
