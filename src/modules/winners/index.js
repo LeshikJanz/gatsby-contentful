@@ -4,7 +4,7 @@ import Following from '../../components/Following';
 import styles from './styles/style.module.scss';
 import Select from 'react-select';
 import WinnerCategory from './components/WinnerCategory';
-import { compose, withState, withHandlers, lifecycle, withProps } from 'recompose';
+import { compose, withState, withHandlers, withProps } from 'recompose';
 
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 const DEFAULT_CATEGORY_FILTER = { value: '', label: 'All Categories' };
@@ -24,7 +24,9 @@ const Winners = (props) => {
         }))
     ];
 
-  const getCategories = () => [DEFAULT_CATEGORY_FILTER, ...categories.edges.map(e => e.node)];
+  const getCategories = () => [DEFAULT_CATEGORY_FILTER, ...categories.edges.map(e => e.node)]
+    .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => filter.label === category.label)
     .sort((a, b) => a.node.medal.order - b.node.medal.order);
@@ -53,10 +55,7 @@ const Winners = (props) => {
       </div>
       {
         getCategories()
-          .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
-          .map((c, i) => <WinnerCategory key={i}
-                                         winners={applyWinnersGrouping(c)}
-          />)
+          .map((c, i) => <WinnerCategory key={i} winners={applyWinnersGrouping(c)}/>)
       }
       {
         selectedWinners && !selectedWinners.length &&
@@ -73,7 +72,7 @@ const Winners = (props) => {
 
 export default compose(
   withState('selectedCategory', 'setCategory', DEFAULT_CATEGORY_FILTER),
-  withState('selectedYear', 'setYear', DEFAULT_DATE_FILTER),
+  withState('selectedYear', 'setYear', { label: '2017', value: '2017' }),
   withProps((props) => ({
     winners: props.data.winners.edges,
   })),

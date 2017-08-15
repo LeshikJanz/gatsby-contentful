@@ -25,6 +25,9 @@ class IndexPage extends React.Component {
 
     const latestNews = this.props.data.latestNews.edges;
 
+    // default filter by only GOLD medals
+    const getWinners = () => winners.filter(w => w.node.medal.order == 1);
+
     return (
       <div>
         <div className={cx(['mainContainer', 'welcome'])}>
@@ -40,7 +43,7 @@ class IndexPage extends React.Component {
             <img src={homePicture.file.url}/>
           </div>
         </div>
-        <TopWinners winners={winners}/>
+        <TopWinners winners={getWinners()}/>
         <div className={styles.info}>
           <LatestNews latestNews={latestNews}/>
           <Following />
@@ -93,6 +96,7 @@ export const pageQuery = graphql`
         }
         medal {
           label
+          order
         }
     }
   }
