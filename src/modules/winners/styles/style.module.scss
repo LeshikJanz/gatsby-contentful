@@ -1,16 +1,6 @@
 @import "../../../styles/common.module";
 @import "../../../styles/mixins.module";
 
-.dropdownsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 74px 7% 20px 8%;
-
-  > *:first-child {
-    margin-right: 20px;
-  }
-}
-
 .winnerCategoryContainer {
   padding: 34px 7% 0 8%;
 

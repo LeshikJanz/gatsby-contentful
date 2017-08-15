@@ -1,32 +1,50 @@
 import React from 'react';
 import styles from './styles/style.module.scss';
 import Select from 'react-select';
-import { compose, withState, withHandlers, withProps } from 'recompose';
+import LatestNews from '../../components/LatestNews';
+import Following from '../../components/Following';
+import FinalistCategory from './components/FinalistCategory';
+import { compose, withState } from 'recompose';
 
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 
-const Finalists = () => {
-
+const Finalists = ({ data: { latestNews, winners, categories }, selectedYear, setYear }) => {
   const getYears = (props) =>
     [DEFAULT_DATE_FILTER,
-      ...[...new Set(categories.edges.map(e => e.node.date.split('-')[0]))]
+      ...[...new Set(winners.edges.map(e => e.node.category.date.split('-')[0]))]
         .map(y => ({
           value: y,
           label: y
         }))
     ];
 
+  const getFilteredCategories = () =>
+    categories.edges
+      .map(e => e.node)
+      .sort((a, b) => a.label.localeCompare(b.label));
+
+  const applyWinnersFiltering = (filter) =>
+    winners.edges
+      .filter(({ node: { category } }) => (filter.label === category.label) &&
+      (selectedYear === DEFAULT_DATE_FILTER ? true : selectedYear.label === category.date.split('-')[0]));
+
   return (
     <div className={styles.finalistsContainer}>
-      <Select
-        name="Select Year"
-        value={selectedYear}
-        clearable={false}
-        style={{ minWidth: '128px', marginTop: '20px' }}
-        placeholder=""
-        options={getYears()}
-        onChange={handleDateSelect}
-      />
+      <div className={styles.dropdownsContainer}>
+        <Select
+          name="Select Year"
+          value={selectedYear}
+          onChange={setYear}
+          clearable={false}
+          options={getYears()}
+          style={{ minWidth: '128px' }}
+        />
+      </div>
+      {
+        getFilteredCategories()
+          .map((c, i) => <FinalistCategory key={i} winners={applyWinnersFiltering(c)}/>
+          )
+      }
 
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
@@ -38,31 +56,21 @@ const Finalists = () => {
 
 
 export default compose(
-  withState('selectedYear', 'setYear', DEFAULT_DATE_FILTER),
-  withProps((props) => ({
-    winners: props.data.winners.edges,
-  })),
-  withProps((props) => {
-    console.log(props);
-    return ({
-      selectedWinners: props.winners.filter(
-        ({ node: { category } }) => ( category.label === props.selectedCategory.label || props.selectedCategory.value === DEFAULT_CATEGORY_FILTER.value) &&
-        ( category.date.split('-')[0] == props.selectedYear.label || props.selectedYear.value === DEFAULT_DATE_FILTER.value ))
-    })
-  }),
-  withHandlers({
-    handleCategorySelect: (props) => (evt) => {
-      props.setCategory(evt);
-    },
-    handleDateSelect: (props) => (evt) => {
-      props.setYear(evt);
-    },
-  })
+  withState('selectedYear', 'setYear', { label: '2017', value: '2017' })
 )(Finalists);
 
-
 export const pageQuery = graphql`
-  query WinnersQuery {
+  query FinalistsQuery {
+     categories: allContentfulCategory(limit: 1000) {
+    edges {
+      node {
+        id
+        label
+        value: label
+        date
+        }
+      }
+    }
     winners: allContentfulFinalists(filter: { isWinner: {eq: true} }) {
     edges {
       node { 

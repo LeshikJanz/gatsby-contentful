@@ -1,0 +1,43 @@
+@import "../../../styles/common.module";
+@import "../../../styles/mixins.module";
+
+.winnerCategoryContainer {
+  padding: 63px 7% 0 8%;
+
+  .winners {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div.winnerItem {
+      cursor: pointer;
+      line-height: 4;
+      opacity: 0.8;
+      margin-right: 50px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .winnerCategory {
+    display: none;
+  }
+
+  .categoryLabel {
+    > h2 {
+      color: #383739;
+    }
+
+    > hr {
+      color: #383739;
+      background-color: #383739;
+    }
+
+    @include category-label;
+  }
+}
+
+.info {
+  margin-top: 100px;
+}

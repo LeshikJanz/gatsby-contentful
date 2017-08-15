@@ -24,9 +24,12 @@ const Winners = (props) => {
         }))
     ];
 
-  const getCategories = () => [DEFAULT_CATEGORY_FILTER, ...categories.edges.map(e => e.node)]
-    .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
-    .sort((a, b) => a.label.localeCompare(b.label));
+  const getCategories = () => [DEFAULT_CATEGORY_FILTER, ...categories.edges.map(e => e.node)];
+
+  const getFilteredCategories = () =>
+    getCategories()
+      .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
+      .sort((a, b) => a.label.localeCompare(b.label))
 
   const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => filter.label === category.label)
     .sort((a, b) => a.node.medal.order - b.node.medal.order);
@@ -54,8 +57,10 @@ const Winners = (props) => {
         />
       </div>
       {
-        getCategories()
-          .map((c, i) => <WinnerCategory key={i} winners={applyWinnersGrouping(c)}/>)
+        getFilteredCategories()
+          .map((c, i) => <WinnerCategory key={i}
+                                         winners={applyWinnersGrouping(c)}
+          />)
       }
       {
         selectedWinners && !selectedWinners.length &&
