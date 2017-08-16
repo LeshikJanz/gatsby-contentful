@@ -1,6 +1,6 @@
 import React from 'react';
-import LatestNews from '../../components/LatestNews';
-import Following from '../../components/Following';
+const LatestNews = require('../../components/LatestNews');
+const Following = require('../../components/Following');
 // import styles from './styles/styles.module.scss';
 // import { format } from 'date-fns';
 
@@ -10,7 +10,12 @@ import Following from '../../components/Following';
 // import googleIcon from '../../assets/images/icons/google-plus.svg';
 
 const Press = ({ data: { press, latestNews } }) => (
-  <div></div>
+  <div>
+    <div className={styles.info}>
+      <LatestNews latestNews={latestNews.edges}/>
+      <Following />
+    </div>
+  </div>
 );
 
 export default Press;
