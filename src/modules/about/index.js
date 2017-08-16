@@ -1,7 +1,7 @@
 import React from 'react';
 
-const About = ({ data: { content, latestNews } }) => (
+const About = () => (
   <div></div>
-)
+);
 
 export default About;
