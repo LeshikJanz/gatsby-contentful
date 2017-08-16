@@ -10,15 +10,23 @@ const Article = ({ article }) => (
   </div>
 );
 
-const LatestNews = ({ latestNews }) => (
-  <div className={styles.latestNewsContainer}>
-    <h2>Latest News</h2>
-    <NukaCarousel>
-      {
-        latestNews.map((n, i) => <Article key={i} article={n.node}/>)
-      }
-    </NukaCarousel>
-  </div>
-);
+class LatestNews extends React.Component {
+  render() {
+
+    const { latestNews } = this.props;
+
+    return (
+      <div className={styles.latestNewsContainer}>
+        <h2>Latest News</h2>
+        <NukaCarousel>
+          {
+            latestNews.map((n, i) => <Article key={i} article={n.node}/>)
+          }
+        </NukaCarousel>
+      </div>
+    );
+  }
+}
+
 
 export default LatestNews;
