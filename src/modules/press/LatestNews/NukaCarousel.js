@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
 import styles from './style.module.scss';
-import backSlideIcon from '../../assets/images/icons/back-slide.svg';
+import backSlideIcon from '../../../assets/images/icons/back-slide.svg';
 const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
 
