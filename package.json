@@ -25,11 +25,12 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "rm -rf .cache && rm -rf public && gatsby develop",
-    "build": "rm -rf .cache && rm -rf public && gatsby build",
+    "develop": "rm -rf .cache public && gatsby develop",
+    "build": "rm -rf .cache public && gatsby build",
     "start": "gatsby serve"
   },
   "devDependencies": {
+    "date-fns": "^1.28.5",
     "nuka-carousel": "^2.2.0",
     "ramda": "^0.24.1",
     "react-select": "^1.0.0-rc.5",
