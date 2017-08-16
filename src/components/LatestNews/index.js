@@ -1,12 +1,12 @@
 import React from "react";
-import styles from './style.module.scss';
+// import styles from './style.module.scss';
 import NukaCarousel from './NukaCarousel';
 
 const Article = ({ article }) => (
-  <div className={styles.articleContainer}>
-    <div className={styles.date}>{article.date}</div>
-    <div className={styles.headLine}>{article.headLine}</div>
-    <div className={styles.reporter}>{article.reporter}</div>
+  <div>
+    <div>{article.date}</div>
+    <div >{article.headLine}</div>
+    <div>{article.reporter}</div>
   </div>
 );
 
@@ -16,7 +16,7 @@ class LatestNews extends React.Component {
     const { latestNews } = this.props;
 
     return (
-      <div className={styles.latestNewsContainer}>
+      <div>
         <h2>Latest News</h2>
         <NukaCarousel>
           {
