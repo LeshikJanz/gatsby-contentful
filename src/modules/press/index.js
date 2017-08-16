@@ -1,8 +1,7 @@
 import React from 'react';
 import LatestNews from '../../components/LatestNews';
 import Following from '../../components/Following';
-
-// import styles from './styles/styles.module.scss';
+import styles from './styles/styles.module.scss';
 // import { format } from 'date-fns';
 
 // import twitterIcon from '../../assets/images/icons/twitter.svg';
