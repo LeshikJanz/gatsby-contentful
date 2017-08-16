@@ -2,12 +2,12 @@ import React from 'react';
 import Link from "gatsby-link";
 import styles from './styles/following.module.scss';
 
-import logo from '../../assets/images/logo.png';
-import plusIcon from '../../assets/images/icons/plus.svg';
-import twitterIcon from '../../assets/images/icons/twitter.svg';
-import linkedin from '../../assets/images/icons/linkedin.svg';
-import facebook from '../../assets/images/icons/facebook.svg';
-import googleIcon from '../../assets/images/icons/google-plus.svg';
+import logo from '../../../assets/images/logo.png';
+import plusIcon from '../../../assets/images/icons/plus.svg';
+import twitterIcon from '../../../assets/images/icons/twitter.svg';
+import linkedin from '../../../assets/images/icons/linkedin.svg';
+import facebook from '../../../assets/images/icons/facebook.svg';
+import googleIcon from '../../../assets/images/icons/google-plus.svg';
 
 const Following = (props) => (
   <div className={ styles.followingContainer }>
