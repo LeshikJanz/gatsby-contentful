@@ -7,11 +7,6 @@ const cx = classNames.bind(styles);
 
 const Decorators = [{
   component: React.createClass({
-    componentDidMount() {
-      setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
-      }, 0);
-    },
     render() {
       const { currentSlide, previousSlide, nextSlide, slideCount } = this.props;
 
@@ -32,7 +27,7 @@ const Decorators = [{
 }];
 
 const NukaCarousel = ({ children }) => (
-  <Carousel decorators={Decorators} fixedHeight={false}>
+  <Carousel decorators={Decorators}>
     { children }
   </Carousel>
 )

@@ -1,11 +1,10 @@
 import React from "react";
 import styles from './style.module.scss';
 import NukaCarousel from './NukaCarousel';
-import { format } from 'date-fns'
 
 const Article = ({ article }) => (
   <div className={styles.articleContainer}>
-    <div className={styles.date}>{format(new Date(article.date), 'MM DD,YYYY')}</div>
+    <div className={styles.date}>{article.date}</div>
     <div className={styles.headLine}>{article.headLine}</div>
     <div className={styles.reporter}>{article.reporter}</div>
   </div>
