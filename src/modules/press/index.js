@@ -13,7 +13,7 @@ const Press = ({ data: { press, latestNews } }) => (
   <div>
     <div>
       <LatestNews latestNews={latestNews.edges}/>
-      <Following />
+      {/*<Following />*/}
     </div>
   </div>
 );
