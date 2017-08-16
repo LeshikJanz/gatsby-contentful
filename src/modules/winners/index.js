@@ -42,7 +42,7 @@ const Winners = (props) => {
           name="Select Year"
           value={selectedYear}
           clearable={false}
-          style={{ minWidth: '128px' }}
+          style={{ minWidth: '128px', marginTop: '20px' }}
           placeholder=""
           options={getYears()}
           onChange={handleDateSelect}
@@ -51,7 +51,7 @@ const Winners = (props) => {
           name="Select Category"
           clearable={false}
           value={selectedCategory}
-          style={{ minWidth: '355px' }}
+          style={{ minWidth: '355px', marginTop: '20px' }}
           placeholder=""
           options={getCategories()}
           onChange={handleCategorySelect}

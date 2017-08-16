@@ -30,11 +30,9 @@
 
   .selectedWinner {
     flex: 1;
-    min-width: $MIN_BLOCK_WIDTH;
 
     &:first-child {
       flex: 2;
-      min-width: $MIN_BLOCK_WIDTH;
     }
   }
 }
@@ -122,7 +120,7 @@
 
 @media screen and (max-width: 510px) {
   .winnerContainer {
-    width: 362px !important;
+    width: 95% !important;
     padding: 30px 35px 30px 0;
   }
 
