@@ -1,68 +1,17 @@
 @import "../../../styles/common.module";
 
-.welcome {
-  display: flex;
+@media screen and (max-width: $TABLET_WIDTH) {
+  .mainContainer {
+    padding: 0 0 0 30px !important;
 
-  .welcomeText {
-    padding-bottom: 100px;
-    width: 90%;
+    > .welcomeText {
+      .title, .description, br {
+        display: none;
+      }
 
-    > .title {
-      font-family: Catamaran;
-      font-size: 44px;
-      font-weight: bold;
-      line-height: 1;
-      text-align: left;
-      color: #0431ff;
-    }
-
-    > .description {
-      font-family: Catamaran;
-      font-size: 18px;
-      line-height: 1.44;
-      text-align: left;
-      color: #1d1c1f;
-    }
-
-    .actions {
-      margin-top: 44px;
-
-      > .winnerButton {
-        cursor: pointer;
-        background-color: #0431ff;
-        border: solid 2px #0431ff;
-        font-size: 15px;
-        font-weight: bold;
-        line-height: 1.33;
-        letter-spacing: -0.1px;
-        text-align: left;
-        color: #ffffff;
-        padding: 20px;
-        transition: 0.1s linear;
-
-        &:hover {
-          cursor: pointer;
-          background-color: #ffffff;
-          border: solid 2px #0431ff;
-          color: #0431ff;
-        }
+      .actions {
+        margin: 0 !important;
       }
     }
-  }
-
-  .welcomePicture {
-    align-self: center;
-    text-align: center;
-    width: 50%;
-
-    > img {
-      max-height: 300px;
-    }
-  }
-}
-
-@media screen and (max-width: 820px) {
-  .welcomePicture {
-    display: none;
   }
 }

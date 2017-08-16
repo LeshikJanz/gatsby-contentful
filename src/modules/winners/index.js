@@ -29,7 +29,7 @@ const Winners = (props) => {
   const getFilteredCategories = () =>
     getCategories()
       .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
-      .sort((a, b) => a.label.localeCompare(b.label))
+      .sort((a, b) => a.label.localeCompare(b.label));
 
   const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => filter.label === category.label)
     .sort((a, b) => a.node.medal.order - b.node.medal.order);
@@ -41,7 +41,7 @@ const Winners = (props) => {
           name="Select Year"
           value={selectedYear}
           clearable={false}
-          style={{ minWidth: '128px', marginTop: '20px' }}
+          style={{ minWidth: '128px' }}
           placeholder=""
           options={getYears()}
           onChange={handleDateSelect}
@@ -50,7 +50,7 @@ const Winners = (props) => {
           name="Select Category"
           clearable={false}
           value={selectedCategory}
-          style={{ minWidth: '355px', marginTop: '20px' }}
+          style={{ minWidth: '355px' }}
           placeholder=""
           options={getCategories()}
           onChange={handleCategorySelect}

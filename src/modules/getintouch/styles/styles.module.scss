@@ -1,0 +1,27 @@
+@import "../../../styles/common.module";
+
+form {
+  margin-top: 50px;
+}
+
+.formElement {
+  display: flex;
+  flex-direction: column;
+  max-width: 592px;
+  margin-bottom: 40px !important;
+
+  > label {
+    opacity: 0.5;
+    font-family: Catamaran-Bold;
+    font-size: 14px;
+    line-height: 2.14;
+    text-align: left;
+    color: rgba(56, 55, 57, 0.5);
+  }
+
+  @media screen and (max-width: $TABLET_WIDTH) {
+    & {
+      width: 100%;
+    }
+  }
+}
