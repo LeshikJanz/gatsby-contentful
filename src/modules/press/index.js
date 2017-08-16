@@ -1,6 +1,7 @@
 import React from 'react';
-const LatestNews = require('../../components/LatestNews');
-const Following = require('../../components/Following');
+import LatestNews from './LatestNews';
+import Following from './Following';
+
 // import styles from './styles/styles.module.scss';
 // import { format } from 'date-fns';
 
