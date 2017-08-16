@@ -51,7 +51,7 @@ const Winners = (props) => {
           name="Select Category"
           clearable={false}
           value={selectedCategory}
-          style={{ minWidth: '355px', marginTop: '20px' }}
+          style={{ minWidth: '315px', marginTop: '20px' }}
           placeholder=""
           options={getCategories()}
           onChange={handleCategorySelect}
