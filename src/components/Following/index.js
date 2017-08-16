@@ -16,7 +16,7 @@ const Following = (props) => (
       <h4>Want to get updates on the Developer Satisfaction Awards?</h4>
       <div className={ styles.subscription }>
         <input type="text" placeholder="YOUR EMAIL ADDRESS"/>
-        <button>
+        <button onClick={ props.handleSubscription }>
           <img src={plusIcon}/>
         </button>
       </div>

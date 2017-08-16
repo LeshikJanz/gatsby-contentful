@@ -1,32 +1,25 @@
 import React from "react";
-// import styles from './style.module.scss';
+import styles from './style.module.scss';
 import NukaCarousel from './NukaCarousel';
+import { format } from 'date-fns'
 
 const Article = ({ article }) => (
-  <div>
-    <div>{article.date}</div>
-    <div >{article.headLine}</div>
-    <div>{article.reporter}</div>
+  <div className={styles.articleContainer}>
+    <div className={styles.date}>{format(new Date(article.date), 'MM DD,YYYY')}</div>
+    <div className={styles.headLine}>{article.headLine}</div>
+    <div className={styles.reporter}>{article.reporter}</div>
   </div>
 );
 
-class LatestNews extends React.Component {
-  render() {
-
-    const { latestNews } = this.props;
-
-    return (
-      <div>
-        <h2>Latest News</h2>
-        <NukaCarousel>
-          {
-            latestNews.map((n, i) => <Article key={i} article={n.node}/>)
-          }
-        </NukaCarousel>
-      </div>
-    );
-  }
-}
-
+const LatestNews = ({ latestNews }) => (
+  <div className={styles.latestNewsContainer}>
+    <h2>Latest News</h2>
+    <NukaCarousel>
+      {
+        latestNews.map((n, i) => <Article key={i} article={n.node}/>)
+      }
+    </NukaCarousel>
+  </div>
+);
 
 export default LatestNews;
