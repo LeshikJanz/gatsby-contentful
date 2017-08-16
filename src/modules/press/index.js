@@ -1,4 +1,13 @@
 import React from 'react';
+// import LatestNews from '../../components/LatestNews';
+// import Following from '../../components/Following';
+// import styles from './styles/styles.module.scss';
+// import { format } from 'date-fns';
+
+import twitterIcon from '../../assets/images/icons/twitter.svg';
+import linkedin from '../../assets/images/icons/linkedin.svg';
+import facebook from '../../assets/images/icons/facebook.svg';
+import googleIcon from '../../assets/images/icons/google-plus.svg';
 
 const Press = ({ data: { press, latestNews } }) => (
   <div></div>
