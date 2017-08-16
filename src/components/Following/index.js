@@ -9,7 +9,6 @@ import linkedin from '../../assets/images/icons/linkedin.svg';
 import facebook from '../../assets/images/icons/facebook.svg';
 import googleIcon from '../../assets/images/icons/google-plus.svg';
 
-
 const Following = (props) => (
   <div className={ styles.followingContainer }>
     <Link to="/"><img className={ styles.logo } src={logo}/></Link>
