@@ -1,6 +1,6 @@
 import React from 'react';
-import LatestNews from './LatestNews';
-import Following from './Following';
+import LatestNews from '../../components/LatestNews';
+import Following from '../../components/Following';
 
 // import styles from './styles/styles.module.scss';
 // import { format } from 'date-fns';
