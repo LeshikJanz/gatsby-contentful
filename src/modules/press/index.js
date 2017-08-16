@@ -11,7 +11,7 @@ const Following = require('../../components/Following');
 
 const Press = ({ data: { press, latestNews } }) => (
   <div>
-    <div className={styles.info}>
+    <div>
       <LatestNews latestNews={latestNews.edges}/>
       <Following />
     </div>
