@@ -2,7 +2,7 @@ import React from 'react';
 import LatestNews from '../../components/LatestNews';
 import Following from '../../components/Following';
 import styles from './styles/styles.module.scss';
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 
 import twitterIcon from '../../assets/images/icons/twitter.svg';
 import linkedin from '../../assets/images/icons/linkedin.svg';
@@ -22,7 +22,7 @@ const Press = ({ data: { press, latestNews } }) => (
             <div key={i}>
               <div className={styles.pressContainer}>
                 <div>
-                  <div className={styles.date}>{format(new Date(node.date), 'MM DD,YYYY')}</div>
+                  {/*<div className={styles.date}>{format(new Date(node.date), 'MM DD,YYYY')}</div>*/}
                   <div className={styles.title}>{node.title}</div>
                   <div className={styles.description}>{node.description.description}</div>
                 </div>
