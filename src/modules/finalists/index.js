@@ -9,17 +9,15 @@ import { compose, withState } from 'recompose';
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 
 const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, setYear }) => {
-  const getYears = (props) =>
+  const getYears = () =>
     [DEFAULT_DATE_FILTER,
-      ...[...new Set(finalists.edges.map(e => e.node.category.date.split('-')[0]))]
+      ...finalists.edges.map(e => e.node.category.date.split('-')[0])
+        .filter((item, pos, self) => self.indexOf(item) == pos)
         .map(y => ({
           value: y,
           label: y
         }))
     ];
-
-  console.log('finalists');
-  console.log(finalists);
 
   const getFilteredCategories = () =>
     categories.edges

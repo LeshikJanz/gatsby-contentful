@@ -17,7 +17,8 @@ const Winners = (props) => {
 
   const getYears = () =>
     [DEFAULT_DATE_FILTER,
-      ...[...new Set(categories.edges.map(e => e.node.date.split('-')[0]))]
+      ...categories.edges.map(e => e.node.date.split('-')[0])
+        .filter((item, pos, self) => self.indexOf(item) == pos)
         .map(y => ({
           value: y,
           label: y
