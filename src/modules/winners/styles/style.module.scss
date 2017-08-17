@@ -34,9 +34,11 @@
 
   .selectedWinner {
     flex: 1;
+    width: 100%;
 
     &:first-child {
       flex: 2;
+      width: 100%;
     }
   }
 }
