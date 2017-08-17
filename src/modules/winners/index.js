@@ -43,7 +43,7 @@ const Winners = (props) => {
           value={selectedYear}
           clearable={false}
           style={{ minWidth: '128px', marginTop: '20px' }}
-          placeholder=""
+          searchable={false}
           options={getYears()}
           onChange={handleDateSelect}
         />
@@ -52,7 +52,7 @@ const Winners = (props) => {
           clearable={false}
           value={selectedCategory}
           style={{ minWidth: '315px', marginTop: '20px' }}
-          placeholder=""
+          searchable={false}
           options={getCategories()}
           onChange={handleCategorySelect}
         />

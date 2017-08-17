@@ -37,6 +37,7 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
           value={selectedYear}
           onChange={setYear}
           clearable={false}
+          searchable={false}
           options={getYears()}
           style={{ minWidth: '128px' }}
         />
