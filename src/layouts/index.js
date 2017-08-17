@@ -6,8 +6,8 @@ import styles from './styles/layout.module.scss';
 const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
 import 'react-select/dist/react-select.min.css';
-import logo from '../assets/images/logo.png';
-import logoWhite from '../assets/images/logo-white.png';
+import logo from '../assets/images/logo.svg';
+import logoWhite from '../assets/images/logo-white.svg';
 import navigations from '../../src/assets/mock-data/navigation.json';
 
 const propTypes = {

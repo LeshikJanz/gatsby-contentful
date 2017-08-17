@@ -106,10 +106,17 @@ $MIN_BLOCK_WIDTH: 300px;
 
 .followIcons {
   display: flex;
+  max-height: 20px;
 
   > img {
     cursor: pointer;
-    margin-right: 26px;
+    max-width: 30px;
+    margin-left: 21px;
+    height: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &:hover {
       filter: grayscale(100%);

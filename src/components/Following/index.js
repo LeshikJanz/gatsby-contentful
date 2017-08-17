@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import styles from './styles/following.module.scss';
 import urls from '../../urls';
 
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.svg';
 import plusIcon from '../../assets/images/icons/plus.svg';
 import twitterIcon from '../../assets/images/icons/twitter.svg';
 import linkedin from '../../assets/images/icons/linkedin.svg';
