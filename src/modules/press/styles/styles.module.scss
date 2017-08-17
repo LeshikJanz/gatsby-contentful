@@ -41,9 +41,12 @@
 
 .pressContainer {
   display: flex;
-  flex-wrap: wrap;
 
-  > div:first-child {
+  @media screen and (max-width: $TABLET_WIDTH) {
+    flex-wrap: wrap;
+  }
+
+    > div:first-child {
     flex: 1;
 
     @media screen and (max-width: $TABLET_WIDTH) {
