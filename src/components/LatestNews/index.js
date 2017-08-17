@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 
 const Article = ({ article }) => (
   <div className={styles.articleContainer}>
-    <div className={styles.date}>{format(new Date(article.date), 'MM DD,YYYY')}</div>
+    <div className={styles.date}>{format(new Date(article.date), 'MMMM DD,YYYY')}</div>
     <div className={styles.headLine}>{article.headLine}</div>
     <div className={styles.reporter}>{article.reporter}</div>
   </div>

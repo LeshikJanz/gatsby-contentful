@@ -1,10 +1,11 @@
 import React from "react"
 import * as PropTypes from "prop-types"
+import Link from "gatsby-link"
 import TopWinners from "../modules/homepage/TopWinners";
 import LatestNews from "../components/LatestNews"
 import Following from "../components/Following/index";
 import Sponsors from '../modules/homepage/Sponsors';
-
+import urls from '../urls';
 import styles from '../modules/homepage/styles/main.module.scss';
 const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
@@ -37,7 +38,7 @@ class IndexPage extends React.Component {
             <br/>
             <div className={styles.description}>{description}</div>
             <div className={styles.actions}>
-              <button className={styles.winnerButton} onClick={this.handleMeasure}>HOW WE MEASURE SATISFACTION</button>
+              <Link to={urls.about} className={styles.winnerButton}>HOW WE MEASURE SATISFACTION</Link>
             </div>
           </div>
           <div className={styles.welcomePicture}>

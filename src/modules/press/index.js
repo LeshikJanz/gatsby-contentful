@@ -22,7 +22,7 @@ const Press = ({ data: { press, latestNews } }) => (
             <div key={i}>
               <div className={styles.pressContainer}>
                 <div>
-                  <div className={styles.date}>{format(new Date(node.date), 'MM DD,YYYY')}</div>
+                  <div className={styles.date}>{format(new Date(node.date), 'MMMM DD,YYYY')}</div>
                   <div className={styles.title}>{node.title}</div>
                   <div className={styles.description}>{node.description.description}</div>
                 </div>

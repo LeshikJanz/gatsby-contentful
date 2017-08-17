@@ -45,11 +45,10 @@
 
   > div:first-child {
     flex: 1;
-    min-width: 600px;
 
     @media screen and (max-width: $TABLET_WIDTH) {
       & {
-        min-width: $MIN_BLOCK_WIDTH;
+        min-width: 100%;
         padding-bottom: 50px;
       }
     }
@@ -61,6 +60,17 @@
     align-self: flex-end;
     flex: 1;
 
+    @media screen and (max-width: $TABLET_WIDTH) {
+      & {
+        width: 100%;
+        justify-content: space-around;
+
+        > * {
+          padding-left: 0 !important;
+        }
+      }
+    }
+
     > div.pdfDownload, > div.shareActions {
       display: flex;
       flex-direction: column;
@@ -68,6 +78,7 @@
       align-self: center;
       justify-content: flex-end;
       padding-left: 50px;
+      width: 40%;
 
       > * {
         padding-top: 29px;
@@ -76,6 +87,10 @@
       > a {
         font-family: Catamaran-Bold;
         color: #0431ff;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 90%;
 
         &:hover {
           color: #383739;

@@ -14,14 +14,14 @@
 
   .winners {
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
   }
 }
 
 .winnerContainer {
   cursor: pointer;
   color: #ffffff;
-  width: 462px;
+  //width: 462px;
   min-height: 353px;
   padding: 30px 35px;
   display: flex;
@@ -113,5 +113,9 @@
 @media screen and (max-width: $TABLET_WIDTH) {
   .topWinnersContainer {
     padding: 3%;
+  }
+
+  .winners {
+    flex-wrap: wrap;
   }
 }

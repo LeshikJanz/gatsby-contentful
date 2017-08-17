@@ -1,6 +1,8 @@
 import React from "react"
 import styles from './styles/winner.module.scss'
 import Winner from '../../components/Winner'
+import Link from "gatsby-link"
+import urls from "../../urls"
 
 const TopWinners = ({ winners }) => (
   <div>
@@ -17,7 +19,9 @@ const TopWinners = ({ winners }) => (
           }
         </div>
         <div style={{ textAlign: 'center' }}>
-          <button className={styles.winnerButtonWhite}>ALL WINNERS</button>
+          <Link to={urls.winners}>
+            <button className={styles.winnerButtonWhite}>ALL WINNERS</button>
+          </Link>
         </div>
       </div>
     }
