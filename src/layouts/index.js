@@ -64,11 +64,10 @@ export default compose(
   withState('windowWidth', 'handleWindowWidth'),
   withHandlers({
     updateDimensions: (props) => (event) => {
-      const w = window,
-        d = document,
+      const d = document,
         documentElement = d.documentElement,
         body = d.getElementsByTagName('body')[0],
-        width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+        width = documentElement.clientWidth || body.clientWidth;
       props.handleWindowWidth(width);
     }
   }),
