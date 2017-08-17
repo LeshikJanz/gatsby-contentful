@@ -23,7 +23,8 @@
     align-items: center;
 
     input {
-      width: 343px;
+      width: 80%;
+      max-width: 343px;
     }
 
     button {
@@ -42,5 +43,6 @@
 @media screen and (max-width: $TABLET_WIDTH) {
   .followingContainer {
     width: 100%;
+    padding-right: 20px;
   }
 }
