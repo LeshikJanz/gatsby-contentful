@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-example-using-contentful",
+  "name": "developer-satisfaction",
   "private": true,
-  "description": "Gatsby example site using the Contentful source plugin",
+  "description": "Developer Satisfaction",
   "version": "1.0.0",
-  "author": "Marcus Ericsson <mericsson@gmail.com> (mericsson.com)",
+  "author": "Alex Tereshko <treshaalesha@gmail.com> (dashbouqet.com)",
   "dependencies": {
     "classnames": "^2.2.5",
     "gatsby": "latest",
@@ -25,12 +25,11 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "rm -rf .cache public && gatsby develop",
-    "build": "rm -rf .cache public && gatsby build",
+    "develop": "rm -rf .cache && rm -rf public && gatsby develop",
+    "build": "rm -rf .cache && rm -rf public && gatsby build",
     "start": "gatsby serve"
   },
   "devDependencies": {
-    "date-fns": "^1.28.5",
     "nuka-carousel": "^2.2.0",
     "ramda": "^0.24.1",
     "react-select": "^1.0.0-rc.5",

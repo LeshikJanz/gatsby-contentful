@@ -65,9 +65,9 @@ const Winners = (props) => {
       }
       {
         selectedWinners && !selectedWinners.length &&
-        <h1 className={styles.mainContainer}>There is no one winner
+        <h1 className={styles.dropdownsContainer}>There is no one winner
           for {selectedCategory.label + ' ' + selectedYear.label}</h1>
-      }
+      }<br/><br/><br/>
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
         <Following />
@@ -83,7 +83,6 @@ export default compose(
     winners: props.data.winners.edges,
   })),
   withProps((props) => {
-    console.log(props);
     return ({
       selectedWinners: props.winners.filter(
         ({ node: { category } }) => ( category.label === props.selectedCategory.label || props.selectedCategory.value === DEFAULT_CATEGORY_FILTER.value) &&

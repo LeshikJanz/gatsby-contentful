@@ -40,14 +40,14 @@ class Html extends React.Component {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="Gatsby example site using Contentful"
+            content="Developer Satisfaction"
           />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>Gatsby Contentful</title>
+          <title>Developer Satisfaction</title>
           <TypographyStyle typography={typography} />
           {css}
         </head>

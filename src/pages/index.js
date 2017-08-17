@@ -3,6 +3,7 @@ import * as PropTypes from "prop-types"
 import TopWinners from "../modules/homepage/TopWinners";
 import LatestNews from "../components/LatestNews"
 import Following from "../components/Following/index";
+import Sponsors from '../modules/homepage/Sponsors';
 
 import styles from '../modules/homepage/styles/main.module.scss';
 const classNames = require('classnames/bind');
@@ -22,8 +23,8 @@ class IndexPage extends React.Component {
     } = this.props.data.main.edges[ 0 ].node;
 
     const winners = this.props.data.winners.edges;
-
     const latestNews = this.props.data.latestNews.edges;
+    const sponsors = this.props.data.sponsors.edges;
 
     // default filter by only GOLD medals
     const getWinners = () => winners.filter(w => w.node.medal.order == 1);
@@ -43,6 +44,7 @@ class IndexPage extends React.Component {
             <img src={homePicture.file.url}/>
           </div>
         </div>
+        <Sponsors sponsors={sponsors}/>
         <TopWinners winners={getWinners()}/>
         <div className={styles.info}>
           <LatestNews latestNews={latestNews}/>
@@ -110,5 +112,18 @@ export const pageQuery = graphql`
     }
   }
   }
+   sponsors: allContentfulSponsors(limit: 1000) {
+    edges {
+      node { 
+        id
+        name
+        logo {
+          file {
+            url
+          }
+        }
+    }
+    }
+    }
 }
 `

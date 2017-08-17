@@ -26,16 +26,17 @@
   }
 
   .categoryLabel {
+    @include category-label;
+
     > h2 {
       color: #383739;
+      white-space: normal;
     }
 
     > hr {
       color: #383739;
       background-color: #383739;
     }
-
-    @include category-label;
   }
 }
 
