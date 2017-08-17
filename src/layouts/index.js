@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
+import urls from '../urls';
 import * as PropTypes from "prop-types"
 import styles from './styles/layout.module.scss';
 const classNames = require('classnames/bind');
@@ -27,8 +28,8 @@ const Navigation = ({ isMobileView }) => (
 const DefaultLayout = ({ children }) => (
   <div>
     <div className={cx(['header', 'containerFluid'])}>
-      <Link to="/"><img className={ styles.logoBlue } src={logo}/></Link>
-      <Link to="/"><img className={ styles.logoWhite } src={logoWhite}/></Link>
+      <Link to={urls.index}><img className={ styles.logoBlue } src={logo}/></Link>
+      <Link to={urls.index}><img className={ styles.logoWhite } src={logoWhite}/></Link>
       <Navigation/>
     </div>
     {children()}

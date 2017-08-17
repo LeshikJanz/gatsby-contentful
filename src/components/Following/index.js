@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "gatsby-link";
 import styles from './styles/following.module.scss';
+import urls from '../../urls';
 
 import logo from '../../assets/images/logo.png';
 import plusIcon from '../../assets/images/icons/plus.svg';
@@ -11,7 +12,7 @@ import googleIcon from '../../assets/images/icons/google-plus.svg';
 
 const Following = (props) => (
   <div className={ styles.followingContainer }>
-    <Link to="/"><img className={ styles.logo } src={logo}/></Link>
+    <Link to={urls.index}><img className={ styles.logo } src={logo}/></Link>
     <div>
       <h4>Want to get updates on the Developer Satisfaction Awards?</h4>
       <div className={ styles.subscription }>

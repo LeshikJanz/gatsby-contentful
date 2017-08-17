@@ -3,6 +3,8 @@ import LatestNews from '../../components/LatestNews';
 import Following from '../../components/Following';
 import styles from './styles/style.module.scss';
 const classNames = require('classnames/bind');
+import Link from "gatsby-link";
+import urls from "../../urls";
 const cx = classNames.bind(styles);
 
 const About = ({ data: { content, latestNews } }) => {
@@ -26,7 +28,7 @@ const About = ({ data: { content, latestNews } }) => {
         <div className={styles.welcomePicture}>
           <img src={picture.file.url}/>
           <div className={styles.actions}>
-            <button className={styles.winnerButton}>GET IN TOUCH</button>
+            <Link to={urls.getintouch}><button className={styles.winnerButton}>GET IN TOUCH</button></Link>
           </div>
         </div>
       </div>
