@@ -39,7 +39,7 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
           clearable={false}
           searchable={false}
           options={getYears()}
-          style={{ minWidth: '128px' }}
+          style={{ minWidth: '128px', marginTop: '20px' }}
         />
       </div>
       {

@@ -65,8 +65,32 @@ a {
   flex-direction: column;
 }
 
-.containerFluid {
+.menuContainerOpen {
+  background-color: #ffffff !important;
+}
+
+.menuContainer {
   padding: 54px 7% 0 8%;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+
+  .logoBar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    > .menuBurger {
+      cursor: pointer;
+      max-width: 40px;
+    }
+  }
+
+  .logo {
+    width: 160px;
+    padding-bottom: 70px;
+  }
 
   .logoBlue {
     width: 190px;
@@ -76,6 +100,10 @@ a {
   .logoWhite {
     width: 160px;
     padding-bottom: 70px;
+    display: none;
+  }
+
+  .menuBurger {
     display: none;
   }
 }

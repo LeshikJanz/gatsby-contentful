@@ -1,17 +1,2 @@
 @import "../../../styles/common.module";
 
-@media screen and (max-width: $TABLET_WIDTH) {
-  .mainContainer {
-    padding: 0 0 0 30px !important;
-
-    > .welcomeText {
-      .title, .description, br {
-        display: none;
-      }
-
-      .actions {
-        margin: 0 !important;
-      }
-    }
-  }
-}

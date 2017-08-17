@@ -59,10 +59,10 @@ $MIN_BLOCK_WIDTH: 300px;
     .welcomePicture {
       align-self: center;
       text-align: center;
-      padding-left: 5%;
       flex: 1;
 
       > img {
+        padding-left: 5%;
         max-height: 300px;
       }
     }
@@ -121,5 +121,11 @@ $MIN_BLOCK_WIDTH: 300px;
     &:hover {
       filter: grayscale(100%);
     }
+  }
+}
+
+@media screen and (max-width: $TABLET_WIDTH) {
+  .mainContainer {
+    padding-top: 200px !important;
   }
 }

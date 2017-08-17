@@ -5,11 +5,13 @@
     overflow-x: hidden;
   }
 
-  .containerFluid {
+  .menuContainer {
     background-color: #0431ff;
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
 
     .logoBlue {
       display: none;
@@ -19,9 +21,14 @@
       display: block;
     }
 
+    .menuBurger {
+      display: block;
+    }
+
     .navigation {
       display: flex;
       flex-direction: column;
+      margin-bottom: 100px;
 
       > a {
         opacity: 1;
