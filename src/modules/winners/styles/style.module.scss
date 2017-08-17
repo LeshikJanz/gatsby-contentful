@@ -30,17 +30,14 @@
 
 .winners {
   display: flex;
-  flex-wrap: wrap;
 
   .selectedWinner {
     flex: 1;
     width: 100%;
-    min-width: 350px;
 
     &:first-child {
       flex: 2;
       width: 100%;
-      min-width: 350px;
     }
   }
 }
@@ -78,7 +75,6 @@
 
     > .companyDescription {
       font-size: 16px;
-      min-width: $MIN_BLOCK_WIDTH;
       line-height: 1.31;
       text-align: left;
     }
@@ -127,12 +123,25 @@
 }
 
 @media screen and (max-width: 510px) {
-  .winnerContainer {
-    width: 95% !important;
-    padding: 30px 35px 30px 0;
-  }
-
   .winnerLabel {
     padding: 60px 0 40px 40px !important;
+  }
+}
+
+@media screen and (max-width: $TABLET_WIDTH) {
+  .topWinnersContainer {
+    padding: 0;
+  }
+
+  .selectedWinner {
+    flex: unset !important;
+  }
+
+  .winners {
+    flex-wrap: wrap;
+  }
+
+  .winnerContainer {
+    padding: 30px 0 !important;
   }
 }
