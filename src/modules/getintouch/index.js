@@ -6,8 +6,9 @@ const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
 
 const GetInTouch = ({ data: { latestNews } }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = ({ target: { elements: { name, email, company, role, message } } }) => {
+    console.log('name');
+    console.log(name.value);
     console.log('form submitted');
   };
 
@@ -16,10 +17,16 @@ const GetInTouch = ({ data: { latestNews } }) => {
       <div className={cx(['getInTouchContainer', 'mainContainer', 'welcome'])}>
         <div className={styles.welcomeText}>
           <div className={styles.title}>Contact Us</div>
-          <form action="" onSubmit={handleSubmit}>
+          <form action="javascript:void(0);" onSubmit={handleSubmit}>
+
             <div className={styles.formElement}>
               <label htmlFor="name">NAME</label>
-              <input name="name" type="text" placeholder="YOUR NAME"/>
+              <input name="name" type="text" placeholder="YOUR NAME" required/>
+            </div>
+
+            <div className={styles.formElement}>
+              <label htmlFor="email">EMAIL ADDRESS</label>
+              <input name="email" type="email" placeholder="EMAIL ADDRESS" required/>
             </div>
 
             <div className={styles.formElement}>
@@ -48,7 +55,7 @@ const GetInTouch = ({ data: { latestNews } }) => {
       </div>
     </div>
   )
-}
+};
 
 export default GetInTouch;
 

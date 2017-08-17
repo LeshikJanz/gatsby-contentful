@@ -37,6 +37,15 @@ input, textarea {
   padding: 19px;
   background-color: #f4f4fb;
   border: none;
+  font-family: Catamaran-Bold;
+  font-size: 14px;
+  line-height: 1.86;
+  text-align: left;
+  color: #0b35ff;
+
+  &:focus {
+    background-color: #ffffff;
+  }
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
