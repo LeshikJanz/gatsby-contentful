@@ -35,7 +35,8 @@ const Navigation = ({ handleMenu }) => (
 
 const DefaultLayout = ({ children, handleMenu, isMenuOpen, windowWidth }) => (
   <div>
-    <div className={cx(['header', 'menuContainer', { [styles.menuContainerOpen]: isMenuOpen },
+    <div style={ isMenuOpen ? {  } : {height: '100%'}}
+      className={cx(['header', 'menuContainer', { [styles.menuContainerOpen]: isMenuOpen },
     ])}>
       <div className={styles.logoBar}>
         <div>
