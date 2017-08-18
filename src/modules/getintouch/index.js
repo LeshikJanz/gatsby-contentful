@@ -22,19 +22,18 @@ const GetInTouch = ({ data: { latestNews } }) => {
       Message: {
         Body: {
           Text: {
-            Data:
-              `Name: ${name.value}\n\Email: ${email.value}\n\Company: ${company.value}\n\Role: ${role.value}\n\Message: ${message.value}`
+            Data: `Name: ${name.value}\n\Email: ${email.value}\n\Company: ${company.value}\n\Role: ${role.value}\n\Message: ${message.value}`
           }
         },
         Subject: {
-          Data: `${email.value} sent a new message`
+          Data: `Contact form [dev satisfaction awards]`
         }
       },
       Source: ADDRESSEE
     };
 
     ses.sendEmail(eParams, (err, data) => {
-      if(err) console.log(err);
+      if (err) console.log(err);
       else {
         console.log("===EMAIL SENT===");
       }
