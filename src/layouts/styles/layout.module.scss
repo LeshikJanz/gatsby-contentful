@@ -55,6 +55,16 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: rgba(56, 55, 57, 0.3);
 }
 
+input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0b35ff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #0b35ff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #f4f4fb inset;
+}
+
 a {
   text-decoration: none;
   color: black;

@@ -4,12 +4,41 @@ import Following from '../../components/Following';
 import styles from './styles/styles.module.scss';
 const classNames = require('classnames/bind');
 const cx = classNames.bind(styles);
+const aws = require('aws-sdk');
+const ses = new aws.SES({
+  accessKeyId: "AKIAJVAGONKBKYXWQUVA",
+  secretAccessKey: "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",
+  region: 'us-east-1'
+});
+
+const ADDRESSEE = 'hello@slashdata.co';
 
 const GetInTouch = ({ data: { latestNews } }) => {
   const handleSubmit = ({ target: { elements: { name, email, company, role, message } } }) => {
-    console.log('name');
-    console.log(name.value);
-    console.log('form submitted');
+    const eParams = {
+      Destination: {
+        ToAddresses: [ADDRESSEE]
+      },
+      Message: {
+        Body: {
+          Text: {
+            Data:
+              `Name: ${name.value}\n\Email: ${email.value}\n\Company: ${company.value}\n\Role: ${role.value}\n\Message: ${message.value}`
+          }
+        },
+        Subject: {
+          Data: `${email.value} sent a new message`
+        }
+      },
+      Source: ADDRESSEE
+    };
+
+    ses.sendEmail(eParams, (err, data) => {
+      if(err) console.log(err);
+      else {
+        console.log("===EMAIL SENT===");
+      }
+    });
   };
 
   return (

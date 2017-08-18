@@ -30,6 +30,7 @@
     "start": "gatsby serve"
   },
   "devDependencies": {
+    "aws-sdk": "^2.100.0",
     "nuka-carousel": "^2.2.0",
     "ramda": "^0.24.1",
     "react-select": "^1.0.0-rc.5",
