@@ -43,7 +43,9 @@
   display: flex;
 
   @media screen and (max-width: $TABLET_WIDTH) {
-    flex-wrap: wrap;
+    & {
+      flex-wrap: wrap;
+    }
   }
 
   > div:first-child {
