@@ -55,7 +55,7 @@ const DefaultLayout = ({ children, handleMenu, isMenuOpen, windowWidth }) => (
     </div>
     {children()}
   </div>
-)
+);
 
 DefaultLayout.propTypes = propTypes;
 

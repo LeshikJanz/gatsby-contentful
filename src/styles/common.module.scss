@@ -102,6 +102,12 @@ $MIN_BLOCK_WIDTH: 300px;
   > *:first-child {
     margin-right: 20px;
   }
+
+  @media screen and (max-width: $TABLET_WIDTH) {
+    & {
+      padding: 144px 7% 20px 8%;
+    }
+  }
 }
 
 .followIcons {
