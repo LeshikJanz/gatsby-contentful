@@ -52,17 +52,6 @@
     align-self: flex-end;
     flex: 1;
 
-    @media screen and (max-width: $TABLET_WIDTH) {
-      & {
-        width: 100%;
-        justify-content: space-around;
-
-        > * {
-          padding-left: 0 !important;
-        }
-      }
-    }
-
     > div.pdfDownload, > div.shareActions {
       display: flex;
       flex-direction: column;
@@ -107,7 +96,6 @@
     text-align: left;
     color: #1d1c1f;
   }
-
 }
 
 @media screen and (max-width: $TABLET_WIDTH) {
@@ -115,9 +103,17 @@
     flex-wrap: wrap !important;
 
     > div:first-child {
-      flex: auto;
-      width: 100%;
+      flex: unset;
       padding-bottom: 50px;
+    }
+
+    > .actions {
+      width: 100%;
+      justify-content: space-around;
+
+      > * {
+        padding-left: 0 !important;
+      }
     }
   }
 }
