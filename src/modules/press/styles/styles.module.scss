@@ -42,22 +42,8 @@
 .pressContainer {
   display: flex;
 
-  @media screen and (max-width: $TABLET_WIDTH) {
-    & {
-      flex-wrap: wrap;
-    }
-  }
-
   > div:first-child {
     flex: 1;
-
-    @media screen and (max-width: $TABLET_WIDTH) {
-      & {
-        flex: auto;
-        width: 100%;
-        padding-bottom: 50px;
-      }
-    }
   }
 
   > .actions {
@@ -122,4 +108,16 @@
     color: #1d1c1f;
   }
 
+}
+
+@media screen and (max-width: $TABLET_WIDTH) {
+  .pressContainer {
+    flex-wrap: wrap !important;
+
+    > div:first-child {
+      flex: auto;
+      width: 100%;
+      padding-bottom: 50px;
+    }
+  }
 }
