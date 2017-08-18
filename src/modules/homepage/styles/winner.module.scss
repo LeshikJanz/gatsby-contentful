@@ -15,6 +15,10 @@
   .winners {
     display: flex;
   }
+
+  .selectedWinner {
+    flex: 1;
+  }
 }
 
 .winnerContainer {
@@ -109,7 +113,17 @@
     padding: 0;
   }
 
+  .selectedWinner {
+    flex: auto !important;
+  }
+
   .winners {
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: $LAPTOP_WIDTH) {
+  .winners {
+    margin: 0 -35px;
   }
 }
