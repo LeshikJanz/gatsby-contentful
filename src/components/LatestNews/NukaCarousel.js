@@ -27,7 +27,7 @@ const Decorators = [{
 }];
 
 const NukaCarousel = ({ children }) => (
-  <Carousel decorators={Decorators}>
+  <Carousel decorators={Decorators} autoplay={true}>
     { children }
   </Carousel>
 )

@@ -17,25 +17,35 @@ const GetInTouch = ({ data: { latestNews } }) => {
   const handleSubmit = ({ target: { elements: { name, email, company, role, message } } }) => {
     const eParams = {
       Destination: {
-        ToAddresses: [ADDRESSEE]
+        ToAddresses: ["treshaalesha@gmail.com"]
       },
       Message: {
         Body: {
           Text: {
-            Data: `Name: ${name.value}\n\Email: ${email.value}\n\Company: ${company.value}\n\Role: ${role.value}\n\Message: ${message.value}`
+            Data:
+              `Name: ${name.value}\n\ Email: ${email.value} \n\
+               Company: ${company.value}
+               Role: ${role.value}
+               Message: ${message.value}`
           }
         },
         Subject: {
-          Data: `Contact form [dev satisfaction awards]`
+          Data: `${email.value} sent a new message`
         }
       },
       Source: ADDRESSEE
     };
 
-    ses.sendEmail(eParams, (err, data) => {
-      if (err) console.log(err);
+    console.log('===SENDING EMAIL===');
+    const eeemail = ses.sendEmail(eParams, (err, data) => {
+      if(err) console.log(err);
       else {
         console.log("===EMAIL SENT===");
+        console.log(data);
+
+
+        console.log("EMAIL CODE END");
+        console.log('EMAIL: ', eeemail);
       }
     });
   };
