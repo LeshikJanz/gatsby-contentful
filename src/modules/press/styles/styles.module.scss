@@ -44,7 +44,7 @@
 
   @media screen and (max-width: $TABLET_WIDTH) {
     flex-wrap: wrap;
-    flex: unset !important;
+    flex: auto !important;
   }
 
   > div:first-child {
@@ -52,8 +52,7 @@
 
     @media screen and (max-width: $TABLET_WIDTH) {
       & {
-        min-width: 100%;
-        flex: unset;
+        flex: auto;
         width: 100%;
         padding-bottom: 50px;
       }
