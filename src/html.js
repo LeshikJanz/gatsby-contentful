@@ -50,6 +50,7 @@ class Html extends React.Component {
           <title>Developer Satisfaction</title>
           <TypographyStyle typography={typography} />
           {css}
+          <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>
           <div id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />

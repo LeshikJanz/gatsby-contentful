@@ -10,16 +10,44 @@ import linkedin from '../../assets/images/icons/linkedin.svg';
 import facebook from '../../assets/images/icons/facebook.svg';
 import googleIcon from '../../assets/images/icons/google-plus.svg';
 
+// TODO - delete it if current version of MailChimp subscription works clear
+// const MailChimp = (props) => {
+//
+//   return (
+//     <div id="mc_embed_signup">
+//       <form action="//slashdata.us1.list-manage.com/subscribe/post?u=f5cdd9d9e59e9c39c83d7b50f&amp;id=be91fbed43"
+//             method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate"
+//             target="_blank" noValidate>
+//         <div id="mc_embed_signup_scroll">
+//           <label htmlFor="mce-EMAIL">Subscribe to our mailing list</label>
+//           <input type="email" value="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="email address"
+//                  required/>
+//           <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true"><input type="text"
+//                                                                                            name="b_f5cdd9d9e59e9c39c83d7b50f_be91fbed43"
+//                                                                                            tabindex="-1" value=""/>
+//           </div>
+//           <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+//                                         className="button"/></div>
+//         </div>
+//       </form>
+//     </div>
+//   )
+// }
+
 const Following = (props) => (
   <div className={ styles.followingContainer }>
     <Link to={urls.index}><img className={ styles.logo } src={logo}/></Link>
     <div>
       <h4>Want to get updates on the Developer Satisfaction Awards?</h4>
       <div className={ styles.subscription }>
-        <input type="text" placeholder="YOUR EMAIL ADDRESS"/>
-        <button onClick={ props.handleSubscription }>
-          <img src={plusIcon}/>
-        </button>
+        <form action="//slashdata.us1.list-manage.com/subscribe/post?u=f5cdd9d9e59e9c39c83d7b50f&amp;id=be91fbed43"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate"
+              target="_blank" noValidate>
+          <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="YOUR EMAIL ADDRESS"/>
+          <button type="submit">
+            <img src={plusIcon}/>
+          </button>
+        </form>
       </div>
     </div>
     <div>
