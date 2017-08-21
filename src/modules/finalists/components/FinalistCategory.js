@@ -4,7 +4,7 @@ import styles from '../styles/style.module.scss';
 const FinalistCategory = ({ finalists }) => (
   <div>
     {finalists && !!finalists.length &&
-    <div className={styles.winnerCategoryContainer}>
+    <div className={styles.innerContainer}>
       <div className={styles.categoryLabel}>
         <h2>{finalists && finalists[0].node.category.label}</h2>
         <hr/>

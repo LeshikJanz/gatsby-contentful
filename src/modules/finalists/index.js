@@ -30,24 +30,25 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
       (selectedYear === DEFAULT_DATE_FILTER ? true : selectedYear.label === category.date.split('-')[0]));
 
   return (
-    <div className={styles.finalistsContainer}>
-      <div className={styles.dropdownsContainer}>
-        <Select
-          name="Select Year"
-          value={selectedYear}
-          onChange={setYear}
-          clearable={false}
-          searchable={false}
-          options={getYears()}
-          style={{ minWidth: '128px', marginTop: '20px' }}
-        />
+    <div>
+      <div className={styles.mainContainer}>
+        <div className={styles.dropdownsContainer}>
+          <Select
+            name="Select Year"
+            value={selectedYear}
+            onChange={setYear}
+            clearable={false}
+            searchable={false}
+            options={getYears()}
+            style={{ minWidth: '128px', marginTop: '20px' }}
+          />
+        </div>
+        {
+          getFilteredCategories()
+            .map((c, i) => <FinalistCategory key={i} finalists={applyFinalistsFiltering(c)}/>
+            )
+        }
       </div>
-      {
-        getFilteredCategories()
-          .map((c, i) => <FinalistCategory key={i} finalists={applyFinalistsFiltering(c)}/>
-          )
-      }
-
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
         <Following />

@@ -5,7 +5,7 @@ import Winner from '../../../components/Winner'
 const WinnerCategory = ({ winners }) => (
   <div>
     {winners && !!winners.length &&
-      <div className={styles.winnerCategoryContainer}>
+      <div className={styles.innerContainer}>
         <div className={styles.categoryLabel}>
           <h2>{winners && winners[0].node.category.label}</h2>
           <hr/>

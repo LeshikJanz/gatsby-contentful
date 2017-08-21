@@ -71,6 +71,10 @@ $MIN_BLOCK_WIDTH: 300px;
       }
     }
   }
+
+  .innerContainer {
+    padding: 34px 0;
+  }
 }
 
 .date {
@@ -101,16 +105,9 @@ $MIN_BLOCK_WIDTH: 300px;
 .dropdownsContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 74px 7% 20px 8%;
 
   > *:first-child {
     margin-right: 20px;
-  }
-
-  @media screen and (max-width: $TABLET_WIDTH) {
-    & {
-      padding: 144px 7% 20px 8%;
-    }
   }
 }
 

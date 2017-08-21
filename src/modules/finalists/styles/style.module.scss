@@ -2,41 +2,37 @@
 @import "../../../styles/mixins.module";
 @import "../../../styles/react-select.module";
 
-.winnerCategoryContainer {
-  padding: 34px 7% 0 8%;
+.finalists {
+  display: flex;
+  flex-wrap: wrap;
 
-  .finalists {
-    display: flex;
-    flex-wrap: wrap;
+  > div.finalist {
+    cursor: pointer;
+    line-height: 4;
+    opacity: 0.8;
+    margin-right: 50px;
 
-    > div.finalist {
-      cursor: pointer;
-      line-height: 4;
-      opacity: 0.8;
-      margin-right: 50px;
-
-      &:hover {
-        opacity: 1;
-      }
+    &:hover {
+      opacity: 1;
     }
   }
+}
 
-  .winnerCategory {
-    display: none;
+.winnerCategory {
+  display: none;
+}
+
+.categoryLabel {
+  @include category-label;
+
+  > h2 {
+    color: #383739;
+    white-space: normal;
   }
 
-  .categoryLabel {
-    @include category-label;
-
-    > h2 {
-      color: #383739;
-      white-space: normal;
-    }
-
-    > hr {
-      color: #383739;
-      background-color: #383739;
-    }
+  > hr {
+    color: #383739;
+    background-color: #383739;
   }
 }
 

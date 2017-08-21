@@ -37,37 +37,39 @@ const Winners = (props) => {
 
   return (
     <div>
-      <div className={styles.dropdownsContainer}>
-        <Select
-          name="Select Year"
-          value={selectedYear}
-          clearable={false}
-          style={{ minWidth: '128px', marginTop: '20px' }}
-          searchable={false}
-          options={getYears()}
-          onChange={handleDateSelect}
-        />
-        <Select
-          name="Select Category"
-          clearable={false}
-          value={selectedCategory}
-          style={{ minWidth: '315px', marginTop: '20px' }}
-          searchable={false}
-          options={getCategories()}
-          onChange={handleCategorySelect}
-        />
+      <div className={styles.mainContainer}>
+        <div className={styles.dropdownsContainer}>
+          <Select
+            name="Select Year"
+            value={selectedYear}
+            clearable={false}
+            style={{ minWidth: '128px', marginTop: '20px' }}
+            searchable={false}
+            options={getYears()}
+            onChange={handleDateSelect}
+          />
+          <Select
+            name="Select Category"
+            clearable={false}
+            value={selectedCategory}
+            style={{ minWidth: '315px', marginTop: '20px' }}
+            searchable={false}
+            options={getCategories()}
+            onChange={handleCategorySelect}
+          />
+        </div>
+        {
+          getFilteredCategories()
+            .map((c, i) => <WinnerCategory key={i}
+                                           winners={applyWinnersGrouping(c)}
+            />)
+        }
+        {
+          selectedWinners && !selectedWinners.length &&
+          <h1 className={styles.dropdownsContainer}>There is no one winner
+            for {selectedCategory.label + ' ' + selectedYear.label}</h1>
+        }<br/><br/><br/>
       </div>
-      {
-        getFilteredCategories()
-          .map((c, i) => <WinnerCategory key={i}
-                                         winners={applyWinnersGrouping(c)}
-          />)
-      }
-      {
-        selectedWinners && !selectedWinners.length &&
-        <h1 className={styles.dropdownsContainer}>There is no one winner
-          for {selectedCategory.label + ' ' + selectedYear.label}</h1>
-      }<br/><br/><br/>
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
         <Following />
