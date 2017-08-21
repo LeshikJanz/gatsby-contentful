@@ -60,11 +60,8 @@ $MIN_BLOCK_WIDTH: 300px;
       align-self: center;
       text-align: center;
       flex: 1;
-
-      > img {
-        padding-left: 5%;
-        max-height: 300px;
-      }
+      margin-right: -10%;
+      min-width: 580px;
     }
   }
 }
