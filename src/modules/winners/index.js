@@ -66,9 +66,9 @@ const Winners = (props) => {
         }
         {
           selectedWinners && !selectedWinners.length &&
-          <h1 className={styles.dropdownsContainer}>There is no one winner
-            for {selectedCategory.label + ' ' + selectedYear.label}</h1>
-        }<br/><br/><br/>
+          <div style={{ paddingTop: '60px' }}><h1 className={styles.dropdownsContainer}>There is no one winner
+            for {selectedCategory.label + ' ' + selectedYear.label}</h1></div>
+        }
       </div>
       <div className={styles.info}>
         <LatestNews latestNews={latestNews.edges}/>
