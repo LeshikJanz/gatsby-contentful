@@ -11,6 +11,7 @@ $MIN_BLOCK_WIDTH: 300px;
 
     .welcomeText {
       padding-bottom: 100px;
+      max-width: 620px;
       flex: 2;
 
       > .title {
@@ -62,6 +63,10 @@ $MIN_BLOCK_WIDTH: 300px;
       flex: 1;
       margin-right: -10%;
       min-width: 580px;
+
+      > img {
+        max-height: 300px;
+      }
     }
   }
 }
