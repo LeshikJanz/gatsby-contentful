@@ -31,6 +31,14 @@
   justify-content: space-around;
   transition: 0.1s linear;
 
+  .logo {
+    height: 153px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   > div:first-child {
     font-size: 28px;
     line-height: 1.57;
@@ -39,10 +47,7 @@
   }
 
   > div img {
-    min-height: 65px;
-    max-height: 100px;
-    margin-top: 46px;
-    margin-bottom: 0 !important;
+    height: 50%;
     filter: brightness(0) invert(1);
   }
 
@@ -53,7 +58,6 @@
       font-weight: bold;
       line-height: 1.38;
       text-align: left;
-      margin-top: 46px;
       color: #ffffff;
     }
 

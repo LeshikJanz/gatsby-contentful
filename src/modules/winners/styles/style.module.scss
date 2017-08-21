@@ -53,10 +53,15 @@
   }
 
   > div img {
-    min-height: 65px;
-    max-height: 100px;
-    margin-top: 46px;
-    margin-bottom: 0 !important;
+    height: 50%;
+  }
+
+  .logo {
+    height: 153px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   > div.company {
@@ -66,7 +71,6 @@
       font-weight: bold;
       line-height: 1.38;
       text-align: left;
-      margin-top: 46px;
     }
 
     > .companyDescription {
