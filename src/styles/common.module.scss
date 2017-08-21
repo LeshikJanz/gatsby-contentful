@@ -137,6 +137,6 @@ $MIN_BLOCK_WIDTH: 300px;
   }
 
   .welcomePicture {
-    min-width: 0;
+    min-width: 0 !important;
   }
 }
