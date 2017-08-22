@@ -82,6 +82,11 @@ export const pageQuery = graphql`
             url
           }
         }
+        homepageLogo {
+          file {
+            url
+          }
+        }
         webSite
         category {
           label
