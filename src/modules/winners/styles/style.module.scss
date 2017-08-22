@@ -40,7 +40,7 @@
 
 .winnerContainer {
   display: flex;
-  min-height: 353px;
+  min-height: 300px;
   padding: 30px 35px 0 0;
   flex-direction: column;
   justify-content: space-around;
@@ -53,12 +53,13 @@
   }
 
   > div img {
-    min-height: 50px;
-    max-height: 65px;
+    max-height: 50%;
+    max-width: 90%;
   }
 
   .logo {
     height: 20vh;
+    min-height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
