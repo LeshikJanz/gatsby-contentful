@@ -7,7 +7,7 @@ const Sponsors = ({ sponsors }) => (
     <div className={styles.sponsors}>
       {
         sponsors.map(({ node }, i) =>
-          <img key={i} src={node.logo.file.url} alt={node.name}/>
+          <div><img key={i} src={node.logo.file.url} alt={node.name}/></div>
         )
       }
     </div>
