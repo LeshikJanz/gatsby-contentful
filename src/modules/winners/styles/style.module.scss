@@ -53,13 +53,15 @@
   }
 
   > div img {
-    max-height: 50%;
-    max-width: 90%;
+    max-height: 74%;
+    max-width: 80%;
   }
 
   .logo {
-    height: 20vh;
+    height: 8vw;
+    width: 10vw;
     min-height: 80px;
+    min-width: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,6 +138,7 @@
   }
 
   .selectedWinner {
+    padding-bottom: 40px;
     flex: unset !important;
   }
 
