@@ -47,7 +47,8 @@
   }
 
   > div img {
-    height: 50%;
+    min-height: 50px;
+    max-height: 65px;
     filter: brightness(0) invert(1);
   }
 
