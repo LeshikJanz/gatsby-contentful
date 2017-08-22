@@ -16,7 +16,6 @@
 
 :global .Select-menu-outer {
   font-size: 15px !important;
-  width: 101% !important;
 }
 
 :global .Select-value {
@@ -28,8 +27,7 @@
   > .Select-control {
     font-family: Catamaran-Bold !important;
     background-color: #0431ff !important;
-    border: solid 2px #0431ff;
-    border-radius: 0;
+    border: none !important;
     height: 51px;
 
     .Select-input > input {
