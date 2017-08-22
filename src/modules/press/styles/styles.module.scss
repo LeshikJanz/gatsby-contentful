@@ -78,6 +78,10 @@
         }
       }
     }
+
+    > div.shareActions {
+      margin-right: 30px;
+    }
   }
 
   .title {
@@ -109,7 +113,7 @@
 
     > .actions {
       width: 100%;
-      justify-content: space-around;
+      justify-content: space-between;
 
       > * {
         padding-left: 0 !important;
