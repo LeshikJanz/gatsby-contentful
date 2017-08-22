@@ -95,7 +95,11 @@ $SMALL_TEXT_LH: 1.31;
 @media screen and (max-width: $TABLET_WIDTH) {
   .welcome {
     flex-direction: column;
-  }
+
+    .welcomePicture {
+      margin-right: 0 !important;
+    }
+    }
 }
 
 .info {
