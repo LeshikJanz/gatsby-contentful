@@ -72,7 +72,7 @@ const GetInTouch = ({ data: { latestNews } }) => {
               <textarea name="message" type="text" rows="4" placeholder="TYPE YOUR MESSAGE"/>
             </div>
             <div className={styles.actions}>
-              <button type="submit" className={styles.winnerButton}>Send message</button>
+              <button type="submit" className={styles.winnerButton}>SEND MESSAGE</button>
             </div>
           </form>
         </div>
