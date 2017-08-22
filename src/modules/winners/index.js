@@ -2,9 +2,12 @@ import React from 'react';
 import LatestNews from '../../components/LatestNews';
 import Following from '../../components/Following';
 import styles from './styles/style.module.scss';
+const classNames = require('classnames/bind');
+const cx = classNames.bind(styles);
 import Select from 'react-select';
 import WinnerCategory from './components/WinnerCategory';
 import { compose, withState, withHandlers, withProps } from 'recompose';
+import arrowIcon from '../../assets/images/icons/back-slide.svg';
 
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 const DEFAULT_CATEGORY_FILTER = { value: '', label: 'All Categories' };
@@ -40,6 +43,8 @@ const Winners = (props) => {
       <div className={styles.mainContainer}>
         <div className={styles.dropdownsContainer}>
           <Select
+            arrowRenderer={({ isOpen }) => (
+              <img className={cx(['dropdownArrow', { [styles['white']]: isOpen }])} src={arrowIcon}/>)}
             name="Select Year"
             value={selectedYear}
             clearable={false}
@@ -49,6 +54,8 @@ const Winners = (props) => {
             onChange={handleDateSelect}
           />
           <Select
+            arrowRenderer={({ isOpen }) => (
+              <img className={cx(['dropdownArrow', { [styles['white']]: isOpen }])} src={arrowIcon}/>)}
             name="Select Category"
             clearable={false}
             value={selectedCategory}

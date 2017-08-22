@@ -26,6 +26,7 @@
 
 :global .is-focused {
   > .Select-control {
+    font-family: Catamaran-Bold !important;
     background-color: #0431ff !important;
     border: solid 2px #0431ff;
     border-radius: 0;
@@ -78,7 +79,7 @@
       top: 17px;
       border: solid #ffffff;
       border-width: 0 2px 2px 0;
-      display: inline-block;
+      display: none;
       padding: 3px;
       transform: rotate(45deg);
     }
@@ -106,7 +107,7 @@
       top: 17px;
       border: solid #0431ff;
       border-width: 0 2px 2px 0;
-      display: inline-block;
+      display: none;
       padding: 3px;
       transform: rotate(45deg);
     }
@@ -126,5 +127,20 @@
     display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
+  }
+}
+
+:global .Select-value-label, :global .Select-value, :global .Select-option {
+  font-family: Catamaran-Bold !important;
+  text-transform: uppercase !important;
+}
+
+.dropdownArrow {
+  transform: rotate(-90deg);
+  width: 8px;
+  margin: 10px 20px 0 0;
+
+  &.white {
+    filter: brightness(0) invert(1);
   }
 }

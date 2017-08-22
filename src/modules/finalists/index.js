@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './styles/style.module.scss';
+const classNames = require('classnames/bind');
+const cx = classNames.bind(styles);
 import Select from 'react-select';
 import LatestNews from '../../components/LatestNews';
 import Following from '../../components/Following';
 import FinalistCategory from './components/FinalistCategory';
 import { compose, withState } from 'recompose';
+import arrowIcon from '../../assets/images/icons/back-slide.svg';
 
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 
@@ -34,6 +37,8 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
       <div className={styles.mainContainer}>
         <div className={styles.dropdownsContainer}>
           <Select
+            arrowRenderer={({ isOpen }) => (
+              <img className={cx(['dropdownArrow', { [styles['white']]: isOpen }])} src={arrowIcon}/>)}
             name="Select Year"
             value={selectedYear}
             onChange={setYear}
@@ -56,7 +61,6 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
     </div>
   )
 };
-
 
 export default compose(
   withState('selectedYear', 'setYear', { label: '2017', value: '2017' })
