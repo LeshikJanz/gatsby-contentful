@@ -32,7 +32,7 @@
   transition: 0.1s linear;
 
   .logo {
-    height: 153px;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,8 +47,9 @@
   }
 
   > div img {
-    min-height: 50px;
-    max-height: 65px;
+    min-height: 30%;
+    max-height: 50%;
+    max-width: 90%;
     filter: brightness(0) invert(1);
   }
 
