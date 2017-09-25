@@ -14,7 +14,7 @@ const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, setYear }) => {
   const getYears = () =>
     [DEFAULT_DATE_FILTER,
-      ...finalists.edges.map(e => e.node.date && e.node.category.date.split('-')[0])
+      ...finalists.edges.map(e => e.node.category && e.node.category.date.split('-')[0])
         .filter((item, pos, self) => self.indexOf(item) == pos)
         .map(y => ({
           value: y,
