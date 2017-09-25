@@ -19,7 +19,7 @@ const IndexPage = ({ data: { main, winners, latestNews, sponsors } }) => {
   const { title, description: { description }, homePicture } = main.edges[0].node;
 
   // default filter by only GOLD medals
-  const getWinners = () => winners.edges.filter(({ node }) => node.medal && (node.medal.order === GOLD_MEDAL_ORDER));
+  const getWinners = () => winners.edges.filter(({ node }) => node.medal && (+node.medal.order === GOLD_MEDAL_ORDER));
 
   return (
     <div>
