@@ -20,7 +20,7 @@ const Winners = (props) => {
 
   const getYears = () =>
     [DEFAULT_DATE_FILTER,
-      ...categories.edges.map(e => e.node.date.split('-')[0])
+      ...categories.edges.map(e => e.node.date && e.node.date.split('-')[0])
         .filter((item, pos, self) => self.indexOf(item) == pos)
         .map(y => ({
           value: y,
@@ -36,7 +36,7 @@ const Winners = (props) => {
       .sort((a, b) => a.label.localeCompare(b.label));
 
   const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => filter.label === category.label)
-    .sort((a, b) => a.node.medal.order - b.node.medal.order);
+    .sort((a, b) => (a.node.medal && b.node.medal) && (a.node.medal.order - b.node.medal.order));
 
   return (
     <div>

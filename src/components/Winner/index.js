@@ -1,7 +1,7 @@
 import React from "react";
 
 const Winner = ({winner, styles}) => {
-  const companyDescription = winner.companyDescription.companyDescription;
+  const companyDescription = winner.companyDescription && winner.companyDescription.companyDescription;
   const logo = winner.logo && (winner.homepageLogo || winner.logo).file.url;
 
   return (
