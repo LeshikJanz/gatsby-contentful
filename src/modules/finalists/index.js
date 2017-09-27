@@ -12,9 +12,12 @@ import arrowIcon from '../../assets/images/icons/back-slide.svg';
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 
 const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, setYear }) => {
+  console.log('finalists');
+  console.log(finalists);
+
   const getYears = () =>
     [DEFAULT_DATE_FILTER,
-      ...finalists.edges.map(e => e.node.category && e.node.category.date.split('-')[0])
+      ...finalists.edges.map(e => e.node.category && [...e.node.category.map(c => c.date.split('-')[0])])
         .filter((item, pos, self) => self.indexOf(item) == pos)
         .map(y => ({
           value: y,
@@ -29,8 +32,8 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
 
   const applyFinalistsFiltering = (filter) =>
     finalists.edges
-      .filter(({ node: { category } }) => (filter.label === category.label) &&
-      (selectedYear === DEFAULT_DATE_FILTER ? true : selectedYear.label === category.date.split('-')[0]));
+      .filter(({ node: { category } }) => category && category.find(({ label }) => filter.label === label) &&
+      (selectedYear === DEFAULT_DATE_FILTER ? true : category.find(({ date }) => selectedYear.label === date.split('-')[0])));
 
   return (
     <div>
@@ -50,7 +53,7 @@ const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, 
         </div>
         {
           getFilteredCategories()
-            .map((c, i) => <FinalistCategory key={i} finalists={applyFinalistsFiltering(c)}/>
+            .map((c, i) => <FinalistCategory key={i} category={c} finalists={applyFinalistsFiltering(c)}/>
             )
         }
       </div>

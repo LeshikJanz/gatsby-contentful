@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from '../styles/style.module.scss';
 
-const FinalistCategory = ({ finalists }) => (
+const FinalistCategory = ({ finalists, category }) => (
   <div>
     {finalists && !!finalists.length &&
     <div className={styles.innerContainer}>
       <div className={styles.categoryLabel}>
-        <h2>{finalists && finalists[0].node.category.label}</h2>
+        <h2>{category && category.label}</h2>
         <hr/>
       </div>
       <div className={styles.finalists}>

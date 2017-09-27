@@ -35,7 +35,7 @@ const Winners = (props) => {
       .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
       .sort((a, b) => a.label.localeCompare(b.label));
 
-  const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => filter.label === category.label)
+  const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => category.find(c => c.label === filter.label))
     .sort((a, b) => (a.node.medal && b.node.medal) && (a.node.medal.order - b.node.medal.order));
 
   return (
@@ -67,7 +67,7 @@ const Winners = (props) => {
         </div>
         {
           getFilteredCategories()
-            .map((c, i) => <WinnerCategory key={i}
+            .map((c, i) => <WinnerCategory key={i} category={c}
                                            winners={applyWinnersGrouping(c)}
             />)
         }
@@ -94,8 +94,8 @@ export default compose(
   withProps((props) => {
     return ({
       selectedWinners: props.winners.filter(
-        ({ node: { category } }) => ( category.label === props.selectedCategory.label || props.selectedCategory.value === DEFAULT_CATEGORY_FILTER.value) &&
-        ( category.date.split('-')[0] == props.selectedYear.label || props.selectedYear.value === DEFAULT_DATE_FILTER.value ))
+        ({ node: { category } }) => ( category && category.find(c => c.label === props.selectedCategory.label) || props.selectedCategory.value === DEFAULT_CATEGORY_FILTER.value) &&
+        ( category && category.find(c => c.date.split('-')[0] == props.selectedYear.label) || props.selectedYear.value === DEFAULT_DATE_FILTER.value ))
     })
   }),
   withHandlers({

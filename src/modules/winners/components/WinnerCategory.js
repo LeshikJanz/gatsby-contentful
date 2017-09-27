@@ -2,12 +2,12 @@ import React from 'react';
 import styles from '../styles/style.module.scss';
 import Winner from '../../../components/Winner'
 
-const WinnerCategory = ({ winners }) => (
+const WinnerCategory = ({ winners, category }) => (
   <div>
     {winners && !!winners.length &&
       <div className={styles.innerContainer}>
         <div className={styles.categoryLabel}>
-          <h2>{winners && winners[0].node.category.label}</h2>
+          <h2>{category && category.label}</h2>
           <hr/>
         </div>
         <div className={styles.winners}>
@@ -20,6 +20,6 @@ const WinnerCategory = ({ winners }) => (
       </div>
     }
   </div>
-)
+);
 
 export default WinnerCategory;
