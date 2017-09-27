@@ -35,7 +35,7 @@ const Winners = (props) => {
       .filter(c => selectedCategory === DEFAULT_CATEGORY_FILTER ? true : c === selectedCategory)
       .sort((a, b) => a.label.localeCompare(b.label));
 
-  const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => category.find(c => c.label === filter.label))
+  const applyWinnersGrouping = (filter) => selectedWinners.filter(({ node: { category } }) => category && category.find(c => c.label === filter.label))
     .sort((a, b) => (a.node.medal && b.node.medal) && (a.node.medal.order - b.node.medal.order));
 
   return (
