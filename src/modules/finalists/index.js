@@ -12,9 +12,6 @@ import arrowIcon from '../../assets/images/icons/back-slide.svg';
 const DEFAULT_DATE_FILTER = { value: '', label: 'All Years' };
 
 const Finalists = ({ data: { latestNews, finalists, categories }, selectedYear, setYear }) => {
-  console.log('finalists');
-  console.log(finalists);
-
   const getYears = () =>
     [DEFAULT_DATE_FILTER,
       ...finalists.edges.map(e => e.node.category && [...e.node.category.map(c => c.date.split('-')[0])])
