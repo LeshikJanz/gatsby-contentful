@@ -20,7 +20,7 @@ const About = ({ data: { content, latestNews } }) => {
         <div className={styles.welcomeText}>
           <div className={styles.title}>{title}</div>
           <br/>
-          <div className={styles.description}>{description}</div>
+          <div className={styles.description} dangerouslySetInnerHTML={{ __html: description }}/>
           <h2>About {companyName}</h2>
           <div className={styles.description}>{companyDescription}</div>
           <a href={companyWebSite} />

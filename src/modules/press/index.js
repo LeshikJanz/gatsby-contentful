@@ -24,12 +24,15 @@ const Press = ({ data: { press, latestNews } }) => (
                 <div>
                   <div className={styles.date}>{format(new Date(node.date), 'MMMM DD,YYYY')}</div>
                   <div className={styles.title}>{node.title}</div>
-                  <div className={styles.description}>{node.description && node.description.description}</div>
+                  <div className={styles.description} dangerouslySetInnerHTML={{
+                    __html: node.description && node.description.description
+                  }}/>
                 </div>
                 <div className={styles.actions}>
                   <div className={styles.pdfDownload}>
                     <h4>Download</h4>
-                    <a target="_blank" href={node.pdf && node.pdf.document.file.url}>{node.pdf.document.file.fileName}</a>
+                    <a target="_blank"
+                       href={node.pdf && node.pdf.document.file.url}>{node.pdf.document.file.fileName}</a>
                   </div>
                   <div className={styles.shareActions}>
                     <h4>Share</h4>

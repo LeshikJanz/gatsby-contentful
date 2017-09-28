@@ -1,6 +1,6 @@
 import React from "react";
 
-const Winner = ({winner, styles}) => {
+const Winner = ({ winner, styles }) => {
   const companyDescription = winner.companyDescription && winner.companyDescription.companyDescription;
   const logo = winner.logo && (winner.homeLogo || winner.logo).file.url;
 
@@ -14,7 +14,9 @@ const Winner = ({winner, styles}) => {
           <div className={styles.logo}><img src={logo} alt={winner.companyName}/></div>
           <div className={styles.company}>
             <div className={styles.companyName}>{winner.companyName}</div>
-            <div className={ styles.companyDescription }>{companyDescription}</div>
+            <div className={ styles.companyDescription } dangerouslySetInnerHTML={{
+              __html: companyDescription
+            }}/>
           </div>
           <a target="_blank" className={styles.winnerWebsite} href={winner.webSite}>{winner.webSite}</a>
         </div>
