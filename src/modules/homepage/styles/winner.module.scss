@@ -14,10 +14,12 @@
 
   .winners {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .selectedWinner {
     flex: 1;
+    min-width: 25vw;
   }
 }
 

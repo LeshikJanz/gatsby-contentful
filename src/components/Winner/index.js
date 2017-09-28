@@ -9,7 +9,7 @@ const Winner = ({ winner, styles }) => {
       {
         winner &&
         <div className={styles.winnerContainer}>
-          <div className={styles.winnerCategory}>{winner.category && winner.category.label}</div>
+          <div className={styles.winnerCategory}>{winner.category && winner.category[0].label}</div>
           <div className={styles.winnerMedal}>{winner.medal && winner.medal.label.toUpperCase()}</div>
           <div className={styles.logo}><img src={logo} alt={winner.companyName}/></div>
           <div className={styles.company}>
