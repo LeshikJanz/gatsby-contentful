@@ -91,6 +91,7 @@ export const pageQuery = graphql`
         date
         headLine
         reporter
+        linkToFullArticle
     }
   }
   }

@@ -7,7 +7,7 @@ import { LATEST_NEWS_COUNT } from "../../constants/index";
 const Article = ({ article }) => (
   <div className={styles.articleContainer}>
     <div className={styles.date}>{format(new Date(article.date), 'MMMM DD,YYYY')}</div>
-    <div className={styles.headLine}>{article.headLine}</div>
+    <a className={styles.headLine} href={article.linkToFullArticle} target="_blank">{article.headLine}</a>
     <div className={styles.reporter}>{article.reporter}</div>
   </div>
 );
@@ -27,6 +27,6 @@ const LatestNews = (props) => {
       </NukaCarousel>
     </div>
   );
-}
+};
 
 export default LatestNews;
