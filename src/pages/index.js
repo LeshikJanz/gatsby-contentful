@@ -82,7 +82,7 @@ export const pageQuery = graphql`
             url
           }
         }
-        homepageLogo {
+        homeLogo {
           file {
             url
           }
