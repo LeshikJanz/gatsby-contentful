@@ -73,9 +73,9 @@ export const pageQuery = graphql`
       node { 
         id
         companyName
-        companyDescription {
+        description: homeCompanyDescription {
           id
-          companyDescription
+          text: homeCompanyDescription
         }
         logo {
           file {
